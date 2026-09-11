@@ -1,7 +1,12 @@
 package crm.vtiger.org;
 
+import java.io.FileReader;
+import java.io.IOException;
 import java.time.Duration;
 
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -48,9 +53,31 @@ public class CreateOrgTest {
 
 	/**
 	 *  It is the method to create organization in vtiger crm application
+	 * @throws ParseException 
+	 * @throws IOException 
 	 */
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, IOException, ParseException {
 
+//		get data from json file
+//		step 1> create a java rep object of the physical file
+		FileReader fr = new FileReader("./src/test/resources/cd.json");
+		
+//		step 2> pass the jro  non static method => parse(fr) to convert to Object
+		
+		JSONParser parser = new JSONParser();
+		
+		Object obj = parser.parse(fr);
+		
+//		step 3> downcast Object to JSONObject to get the value
+		JSONObject jObj = (JSONObject) obj;
+		
+//		step 4> by using get() and passing the key get the value
+		String browser = jObj.get("bro").toString();
+		String url = jObj.get("url").toString();
+		String username = jObj.get("un").toString();
+		String password = jObj.get("pwd").toString();
+
+		
 		System.out.println("==============================================");
 		System.out.println("       CREATE ORGANIZATION TEST STARTED       ");
 		System.out.println("==============================================");
@@ -58,7 +85,6 @@ public class CreateOrgTest {
 		// Open the browser
 		System.out.println("[INFO] Launching Chrome browser...");
 		
-		String browser = "edge";
 		WebDriver driver = null;
 		if (browser.equals("chrome")) 
 			driver = new ChromeDriver();
@@ -77,21 +103,21 @@ public class CreateOrgTest {
 
 		// Navigate to URL
 		System.out.println("[INFO] Navigating to Vtiger CRM application...");
-		driver.get("http://49.249.29.4:8888/");
+		driver.get(url);
 		System.out.println("[INFO] Application launched successfully.");
 
 		// Login
 		System.out.println("[INFO] Starting login process...");
 
-		WebElement username = driver.findElement(By.name("user_name"));
-		WebElement password = driver.findElement(By.name("user_password"));
+		WebElement usernameField = driver.findElement(By.name("user_name"));
+		WebElement passwordField = driver.findElement(By.name("user_password"));
 		WebElement loginButton = driver.findElement(By.id("submitButton"));
 
 		System.out.println("[INFO] Entering username...");
-		username.sendKeys("admin");
+		usernameField.sendKeys(username);
 
 		System.out.println("[INFO] Entering password...");
-		password.sendKeys("admin");
+		passwordField.sendKeys(password);
 
 		System.out.println("[INFO] Clicking Login button...");
 		loginButton.click();
