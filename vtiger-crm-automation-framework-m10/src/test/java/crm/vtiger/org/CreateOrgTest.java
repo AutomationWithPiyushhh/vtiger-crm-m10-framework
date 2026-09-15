@@ -1,9 +1,15 @@
 package crm.vtiger.org;
 
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.time.Duration;
 
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
@@ -18,81 +24,89 @@ import org.openqa.selenium.interactions.Actions;
 /**
  * Test Script: Create Organization
  *
- * Purpose:
- * This script automates the creation of a new Organization
- * in the Vtiger CRM application.
+ * Purpose: This script automates the creation of a new Organization in the
+ * Vtiger CRM application.
  *
- * Test Flow:
- * 1. Launch Chrome browser
- * 2. Maximize browser window
- * 3. Configure implicit wait
- * 4. Navigate to Vtiger CRM application
- * 5. Login using valid credentials
- * 6. Navigate to Organizations module
- * 7. Open Create Organization page
- * 8. Generate a unique organization name
- * 9. Enter organization name
- * 10. Save the organization
- * 11. Verify the created organization name
- * 12. Logout from the application
- * 13. Close the browser
+ * Test Flow: 1. Launch Chrome browser 2. Maximize browser window 3. Configure
+ * implicit wait 4. Navigate to Vtiger CRM application 5. Login using valid
+ * credentials 6. Navigate to Organizations module 7. Open Create Organization
+ * page 8. Generate a unique organization name 9. Enter organization name 10.
+ * Save the organization 11. Verify the created organization name 12. Logout
+ * from the application 13. Close the browser
  *
- * Expected Result:
- * Organization should be created successfully and the
- * actual organization name should match the generated name.
+ * Expected Result: Organization should be created successfully and the actual
+ * organization name should match the generated name.
  *
- * Application:
- * Vtiger CRM
+ * Application: Vtiger CRM
  *
- * Browser:
- * Google Chrome
+ * Browser: Google Chrome
  *
  * Author: AutomationWithPiyush
  */
 public class CreateOrgTest {
 
 	/**
-	 *  It is the method to create organization in vtiger crm application
-	 * @throws ParseException 
-	 * @throws IOException 
+	 * It is the method to create organization in vtiger crm application
+	 * 
+	 * @throws ParseException
+	 * @throws IOException
 	 */
 	public static void main(String[] args) throws InterruptedException, IOException, ParseException {
 
 //		get data from json file
 //		step 1> create a java rep object of the physical file
 		FileReader fr = new FileReader("./src/test/resources/cd.json");
-		
+
 //		step 2> pass the jro  non static method => parse(fr) to convert to Object
-		
+
 		JSONParser parser = new JSONParser();
-		
+
 		Object obj = parser.parse(fr);
-		
+
 //		step 3> downcast Object to JSONObject to get the value
 		JSONObject jObj = (JSONObject) obj;
-		
+
 //		step 4> by using get() and passing the key get the value
 		String browser = jObj.get("bro").toString();
 		String url = jObj.get("url").toString();
 		String username = jObj.get("un").toString();
 		String password = jObj.get("pwd").toString();
 
-		
+//		get data from excel file
+//		Step 1) create the java rep object of the physical file
+		FileInputStream fis = new FileInputStream("./src/test/resources/testScriptData.xlsx");
+
+//		Step 2) get the access of WorkBook by using WorkBookFactory <<C>>
+		Workbook wb = WorkbookFactory.create(fis);
+
+//		Step 3) get the access of Sheet by using getSheet() and pass the sheetname
+		Sheet sh = wb.getSheet("org");
+
+//		Step 4) get the access of Row by using getRow() and pass the row index
+		Row row = sh.getRow(3);
+
+//		Step 5) get the access of Cell by using getCell() and pass the cell index
+		Cell cell = row.getCell(0);
+
+//		Ṣtep 6) get the value by using getStringCellValue()
+		long random = System.currentTimeMillis() / 1000;
+		String orgName = cell.getStringCellValue() + random;
+
 		System.out.println("==============================================");
 		System.out.println("       CREATE ORGANIZATION TEST STARTED       ");
 		System.out.println("==============================================");
 
 		// Open the browser
 		System.out.println("[INFO] Launching Chrome browser...");
-		
+
 		WebDriver driver = null;
-		if (browser.equals("chrome")) 
+		if (browser.equals("chrome"))
 			driver = new ChromeDriver();
-		else if(browser.equals("edge"))
+		else if (browser.equals("edge"))
 			driver = new EdgeDriver();
-		else if(browser.equals("firefox"))
+		else if (browser.equals("firefox"))
 			driver = new FirefoxDriver();
-		else 
+		else
 			driver = new ChromeDriver();
 
 		System.out.println("[INFO] Maximizing browser window...");
@@ -131,8 +145,7 @@ public class CreateOrgTest {
 		System.out.println("[INFO] Opening Create Organization page...");
 		driver.findElement(By.cssSelector("img[title='Create Organization...']")).click();
 
-		long random = System.currentTimeMillis() / 1000;
-		String orgName = "google_" + random;
+//		String orgName = "google_" + random;
 
 		System.out.println("[INFO] Generated Organization Name: " + orgName);
 
