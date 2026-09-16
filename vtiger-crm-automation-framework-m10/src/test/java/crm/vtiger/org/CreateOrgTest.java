@@ -21,6 +21,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 
+import generic_utility.FileUtility;
+
 /**
  * Test Script: Create Organization
  *
@@ -54,43 +56,23 @@ public class CreateOrgTest {
 	public static void main(String[] args) throws InterruptedException, IOException, ParseException {
 
 //		get data from json file
-//		step 1> create a java rep object of the physical file
-		FileReader fr = new FileReader("./src/test/resources/cd.json");
+//		FileReader fr = new FileReader("./src/test/resources/cd.json");
+//		JSONParser parser = new JSONParser();
+//		Object obj = parser.parse(fr);
+//		JSONObject jObj = (JSONObject) obj;
+//		String browser = jObj.get("bro").toString();
+//		String url = jObj.get("url").toString();
+//		String username = jObj.get("un").toString();
+//		String password = jObj.get("pwd").toString();
 
-//		step 2> pass the jro  non static method => parse(fr) to convert to Object
+//		get data from json file
+		String browser = FileUtility.getDataFromJsonFile("bro");
+		String url = FileUtility.getDataFromJsonFile("url");
+		String username = FileUtility.getDataFromJsonFile("un");
+		String password = FileUtility.getDataFromJsonFile("pwd");
 
-		JSONParser parser = new JSONParser();
-
-		Object obj = parser.parse(fr);
-
-//		step 3> downcast Object to JSONObject to get the value
-		JSONObject jObj = (JSONObject) obj;
-
-//		step 4> by using get() and passing the key get the value
-		String browser = jObj.get("bro").toString();
-		String url = jObj.get("url").toString();
-		String username = jObj.get("un").toString();
-		String password = jObj.get("pwd").toString();
-
-//		get data from excel file
-//		Step 1) create the java rep object of the physical file
-		FileInputStream fis = new FileInputStream("./src/test/resources/testScriptData.xlsx");
-
-//		Step 2) get the access of WorkBook by using WorkBookFactory <<C>>
-		Workbook wb = WorkbookFactory.create(fis);
-
-//		Step 3) get the access of Sheet by using getSheet() and pass the sheetname
-		Sheet sh = wb.getSheet("org");
-
-//		Step 4) get the access of Row by using getRow() and pass the row index
-		Row row = sh.getRow(3);
-
-//		Step 5) get the access of Cell by using getCell() and pass the cell index
-		Cell cell = row.getCell(0);
-
-//		Ṣtep 6) get the value by using getStringCellValue()
 		long random = System.currentTimeMillis() / 1000;
-		String orgName = cell.getStringCellValue() + random;
+
 
 		System.out.println("==============================================");
 		System.out.println("       CREATE ORGANIZATION TEST STARTED       ");
@@ -139,6 +121,15 @@ public class CreateOrgTest {
 		System.out.println("[INFO] Login process completed.");
 
 		// Create Organization
+//		get data from excel file
+//		FileInputStream fis = new FileInputStream("./src/test/resources/testScriptData.xlsx");
+//		Workbook wb = WorkbookFactory.create(fis);
+//		Sheet sh = wb.getSheet("org");
+//		Row row = sh.getRow(3);
+//		Cell cell = row.getCell(0);
+//		String orgName = cell.getStringCellValue() + random;
+
+		String orgName = FileUtility.getDataFromExcelFile("org", 3, 0) + +random;
 		System.out.println("[INFO] Navigating to Organizations module...");
 		driver.findElement(By.linkText("Organizations")).click();
 

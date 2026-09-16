@@ -1,12 +1,18 @@
 package crm.vtiger.contact;
 
+import java.io.IOException;
 import java.time.Duration;
 
+import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
+
+import generic_utility.FileUtility;
 
 /**
  * Test Script: Create Contact
@@ -48,16 +54,34 @@ public class CreateContactTest {
 	 *
 	 * @param args command-line arguments
 	 * @throws InterruptedException if thread execution is interrupted
+	 * @throws ParseException 
+	 * @throws IOException 
 	 */
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException, IOException, ParseException {
+
+		
+//		get data from json file
+		String browser = FileUtility.getDataFromJsonFile("bro");
+		String url = FileUtility.getDataFromJsonFile("url");
+		String username = FileUtility.getDataFromJsonFile("un");
+		String password = FileUtility.getDataFromJsonFile("pwd");
 
 		System.out.println("==============================================");
-		System.out.println("          CREATE CONTACT TEST STARTED        ");
+		System.out.println("       CREATE Contact TEST STARTED       ");
 		System.out.println("==============================================");
 
 		// Open the browser
 		System.out.println("[INFO] Launching Chrome browser...");
-		WebDriver driver = new ChromeDriver();
+
+		WebDriver driver = null;
+		if (browser.equals("chrome"))
+			driver = new ChromeDriver();
+		else if (browser.equals("edge"))
+			driver = new EdgeDriver();
+		else if (browser.equals("firefox"))
+			driver = new FirefoxDriver();
+		else
+			driver = new ChromeDriver();
 
 		System.out.println("[INFO] Maximizing browser window...");
 		driver.manage().window().maximize();
@@ -67,26 +91,26 @@ public class CreateContactTest {
 
 		// Navigate to URL
 		System.out.println("[INFO] Navigating to Vtiger CRM application...");
-		driver.get("http://49.249.29.4:8888/");
+		driver.get(url);
 		System.out.println("[INFO] Application launched successfully.");
 
 		// Login
 		System.out.println("[INFO] Starting login process...");
 
-		WebElement username = driver.findElement(By.name("user_name"));
-		WebElement password = driver.findElement(By.name("user_password"));
+		WebElement usernameField = driver.findElement(By.name("user_name"));
+		WebElement passwordField = driver.findElement(By.name("user_password"));
 		WebElement loginButton = driver.findElement(By.id("submitButton"));
 
 		System.out.println("[INFO] Entering username...");
-		username.sendKeys("admin");
+		usernameField.sendKeys(username);
 
 		System.out.println("[INFO] Entering password...");
-		password.sendKeys("admin");
+		passwordField.sendKeys(password);
 
 		System.out.println("[INFO] Clicking Login button...");
 		loginButton.click();
 
-		System.out.println("[INFO] Login process completed successfully.");
+		System.out.println("[INFO] Login process completed.");
 
 		// Create Contact
 		System.out.println("[INFO] Navigating to Contacts module...");
@@ -95,8 +119,9 @@ public class CreateContactTest {
 		System.out.println("[INFO] Opening Create Contact page...");
 		driver.findElement(By.cssSelector("img[title='Create Contact...']")).click();
 
-		String lastName = "Singh";
-
+//		get data from excel file
+		String lastName = FileUtility.getDataFromExcelFile("contact", 1, 0);
+		
 		System.out.println("[INFO] Contact Last Name: " + lastName);
 
 		WebElement lastNameField = driver.findElement(By.name("lastname"));
