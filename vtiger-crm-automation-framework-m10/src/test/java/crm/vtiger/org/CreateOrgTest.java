@@ -1,17 +1,8 @@
 package crm.vtiger.org;
 
-import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.time.Duration;
 
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.ss.usermodel.WorkbookFactory;
-import org.json.simple.JSONObject;
-import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -22,6 +13,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.interactions.Actions;
 
 import generic_utility.FileUtility;
+import generic_utility.JavaUtility;
+import generic_utility.WebDriverUtility;
 
 /**
  * Test Script: Create Organization
@@ -71,8 +64,9 @@ public class CreateOrgTest {
 		String username = FileUtility.getDataFromJsonFile("un");
 		String password = FileUtility.getDataFromJsonFile("pwd");
 
-		long random = System.currentTimeMillis() / 1000;
+		long random = JavaUtility.generateRandomNumber();
 
+		String orgName = FileUtility.getDataFromExcelFile("org", 3, 0) + +random;
 
 		System.out.println("==============================================");
 		System.out.println("       CREATE ORGANIZATION TEST STARTED       ");
@@ -129,7 +123,7 @@ public class CreateOrgTest {
 //		Cell cell = row.getCell(0);
 //		String orgName = cell.getStringCellValue() + random;
 
-		String orgName = FileUtility.getDataFromExcelFile("org", 3, 0) + +random;
+//		String orgName = FileUtility.getDataFromExcelFile("org", 3, 0) + +random;
 		System.out.println("[INFO] Navigating to Organizations module...");
 		driver.findElement(By.linkText("Organizations")).click();
 
@@ -170,10 +164,14 @@ public class CreateOrgTest {
 
 		WebElement profileIcon = driver.findElement(By.cssSelector("img[src='themes/softed/images/user.PNG']"));
 
-		Actions act = new Actions(driver);
-
 		System.out.println("[INFO] Hovering over profile icon...");
-		act.moveToElement(profileIcon).build().perform();
+
+		WebDriverUtility wdUtil = new WebDriverUtility(driver);
+
+//		Actions act = new Actions(driver);
+//		act.moveToElement(profileIcon).build().perform();
+
+		wdUtil.hover(profileIcon);
 
 		System.out.println("[INFO] Clicking Sign Out...");
 		driver.findElement(By.linkText("Sign Out")).click();
