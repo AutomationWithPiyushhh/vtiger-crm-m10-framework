@@ -2,17 +2,31 @@ package pom_extra;
 
 import java.time.Duration;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.support.PageFactory;
 
-import object_repository.SauceDemoPage;
+import object_repository_sauce.CartPage;
+import object_repository_sauce.CheckOutCompletionPge;
+import object_repository_sauce.CheckOutInfoPage;
+import object_repository_sauce.CheckOutOverViewPge;
+import object_repository_sauce.HomePage;
+import object_repository_sauce.LoginPage;
 
 public class SacueDemoTest {
 
+	
 	public static void main(String[] args) throws InterruptedException {
 
+//		Rules for pom
+		/*
+		 * 1. Number of web pages = Number of POM Pages
+		 * 2. Number of web elments = Number of webelement references in pom page
+		 * 3. declare webelments as private
+		 * 4. access them through getter methods
+		 * 5. initialize them through PageFactory.initElements(driver, this)
+		*/		
+		
 		// ============================================================
 		// TEST DATA
 		// ============================================================
@@ -25,317 +39,329 @@ public class SacueDemoTest {
 		String lastName = "Baldaniya";
 		String postalCode = "302001";
 
-		WebDriver driver = null;
 
-		try {
 
-			// ============================================================
-			// STEP 1: LAUNCH BROWSER
-			// ============================================================
+		// ============================================================
+		// TEST START
+		// ============================================================
 
-			System.out.println("============================================================");
-			System.out.println("          SAUCEDEMO END-TO-END TEST STARTED");
-			System.out.println("============================================================");
+		System.out.println("============================================================");
+		System.out.println("          SAUCEDEMO END-TO-END TEST STARTED");
+		System.out.println("============================================================");
 
-			System.out.println("[INFO] Launching Chrome browser...");
+		// ============================================================
+		// STEP 1: LAUNCH BROWSER
+		// ============================================================
 
-			driver = new EdgeDriver();
+		System.out.println("[INFO] Launching Edge browser...");
 
-			System.out.println("[PASS] Chrome browser launched successfully.");
+		WebDriver driver = new EdgeDriver();
 
-			// ============================================================
-			// STEP 2: MAXIMIZE BROWSER
-			// ============================================================
+		System.out.println("[PASS] Edge browser launched successfully.");
 
-			System.out.println("[INFO] Maximizing browser window...");
+		// ============================================================
+		// STEP 2: MAXIMIZE BROWSER
+		// ============================================================
 
-			driver.manage().window().maximize();
+		System.out.println("[INFO] Maximizing browser window...");
 
-			System.out.println("[PASS] Browser window maximized.");
+		driver.manage().window().maximize();
 
-			// ============================================================
-			// STEP 3: IMPLICIT WAIT
-			// ============================================================
+		System.out.println("[PASS] Browser window maximized.");
 
-			System.out.println("[INFO] Configuring implicit wait...");
+		// ============================================================
+		// STEP 3: IMPLICIT WAIT
+		// ============================================================
 
-			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		System.out.println("[INFO] Configuring implicit wait...");
 
-			System.out.println("[PASS] Implicit wait configured to 10 seconds.");
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 
-			// ============================================================
-			// STEP 4: OPEN APPLICATION
-			// ============================================================
+		System.out.println("[PASS] Implicit wait configured to 10 seconds.");
 
-			System.out.println("[INFO] Navigating to SauceDemo application...");
+		// ============================================================
+		// STEP 4: OPEN APPLICATION
+		// ============================================================
 
-			driver.get(url);
+		System.out.println("[INFO] Navigating to SauceDemo application...");
 
-			System.out.println("[PASS] SauceDemo application opened successfully.");
-			System.out.println("[INFO] Current URL: " + driver.getCurrentUrl());
+		driver.get(url);
 
-			// ============================================================
-			// STEP 5: LOGIN
-			// ============================================================
+		System.out.println("[PASS] SauceDemo application opened successfully.");
+		System.out.println("[INFO] Current URL: " + driver.getCurrentUrl());
 
-			System.out.println("------------------------------------------------------------");
-			System.out.println("[STEP 1] LOGIN");
-			System.out.println("------------------------------------------------------------");
+		// ============================================================
+		// INITIALIZE PAGE OBJECT
+		// ============================================================
 
-			SauceDemoPage sdp = new SauceDemoPage(driver);
-			
-			WebElement usernameField = sdp.getUsernameField();
-			WebElement passwordField = sdp.getPasswordField();
-			WebElement loginButton = sdp.getLoginButton();
-			
-			driver.navigate().refresh();
-			
-//			usernameField = driver.findElement(By.id("user-name"));
-			usernameField.sendKeys(username);
-			
-//			passwordField = driver.findElement(By.id("password"));
-			passwordField.sendKeys(password);
-			
-//			loginButton = driver.findElement(By.id("login-button"));
-			loginButton.click();
+		LoginPage lp = new LoginPage(driver);
+		HomePage hp = new HomePage(driver);
+		CartPage cp = new CartPage(driver);
+		CheckOutInfoPage cip = new CheckOutInfoPage(driver);
+		CheckOutOverViewPge cop = new CheckOutOverViewPge(driver);
+		CheckOutCompletionPge ccp = new CheckOutCompletionPge(driver);
 
-			System.out.println("[PASS] Login button clicked.");
+		// ============================================================
+		// STEP 5: LOGIN
+		// ============================================================
 
-			// Verify login
-			String inventoryUrl = driver.getCurrentUrl();
+		System.out.println("------------------------------------------------------------");
+		System.out.println("[STEP 1] LOGIN");
+		System.out.println("------------------------------------------------------------");
 
-			if (inventoryUrl.contains("inventory.html")) {
-				System.out.println("[PASS] Login successful.");
-				System.out.println("[INFO] User is redirected to Products page.");
-			} else {
-				System.out.println("[FAIL] Login failed.");
-				throw new RuntimeException("Login verification failed.");
-			}
+		System.out.println("[INFO] Entering username...");
 
-			// ============================================================
-			// STEP 6: ADD PRODUCT TO CART
-			// ============================================================
+		lp.getUsernameField().sendKeys(username);
 
-			System.out.println("------------------------------------------------------------");
-			System.out.println("[STEP 2] ADD PRODUCT TO CART");
-			System.out.println("------------------------------------------------------------");
+		System.out.println("[PASS] Username entered.");
 
-			System.out.println("[INFO] Selecting product: Sauce Labs Backpack");
+		System.out.println("[INFO] Entering password...");
 
-			WebElement addTocartButton = sdp.getAddTocartButton() ;
-			addTocartButton.click();
+		lp.getPasswordField().sendKeys(password);
 
-			System.out.println("[PASS] Sauce Labs Backpack added to cart.");
+		System.out.println("[PASS] Password entered.");
 
-			// Verify cart badge
-			String cartCount = driver.findElement(By.className("shopping_cart_badge")).getText();
+		System.out.println("[INFO] Clicking Login button...");
 
-			if (cartCount.equals("1")) {
-				System.out.println("[PASS] Cart contains 1 product.");
-			} else {
-				System.out.println("[FAIL] Product count verification failed.");
-				throw new RuntimeException("Cart count is not 1.");
-			}
+		lp.getLoginButton().click();
 
-			// ============================================================
-			// STEP 7: OPEN CART
-			// ============================================================
+		System.out.println("[PASS] Login button clicked.");
 
-			System.out.println("------------------------------------------------------------");
-			System.out.println("[STEP 3] OPEN SHOPPING CART");
-			System.out.println("------------------------------------------------------------");
+		// Verify login
+		String inventoryUrl = driver.getCurrentUrl();
 
-			System.out.println("[INFO] Clicking shopping cart icon...");
+		if (inventoryUrl.contains("inventory.html")) {
 
-			driver.findElement(By.className("shopping_cart_link")).click();
+			System.out.println("[PASS] Login successful.");
+			System.out.println("[INFO] User is redirected to Products page.");
 
-			System.out.println("[PASS] Shopping cart page opened.");
+		} else {
 
-			// Verify cart page
-			if (driver.getCurrentUrl().contains("cart.html")) {
-				System.out.println("[PASS] Cart page URL verified.");
-			} else {
-				System.out.println("[FAIL] Cart page verification failed.");
-				throw new RuntimeException("Cart page was not opened.");
-			}
-
-			// ============================================================
-			// STEP 8: VERIFY PRODUCT IN CART
-			// ============================================================
-
-			System.out.println("[INFO] Verifying product in shopping cart...");
-
-			String productName = driver.findElement(By.className("inventory_item_name")).getText();
-
-			if (productName.equals("Sauce Labs Backpack")) {
-				System.out.println("[PASS] Product verified in cart: " + productName);
-			} else {
-				System.out.println("[FAIL] Expected product not found in cart.");
-				throw new RuntimeException("Product verification failed.");
-			}
-
-			// ============================================================
-			// STEP 9: CHECKOUT
-			// ============================================================
-
-			System.out.println("------------------------------------------------------------");
-			System.out.println("[STEP 4] CHECKOUT");
-			System.out.println("------------------------------------------------------------");
-
-			System.out.println("[INFO] Clicking Checkout button...");
-
-			driver.findElement(By.id("checkout")).click();
-
-			System.out.println("[PASS] Checkout information page opened.");
-
-			// ============================================================
-			// STEP 10: ENTER CHECKOUT INFORMATION
-			// ============================================================
-
-			System.out.println("[INFO] Entering first name...");
-
-			driver.findElement(By.id("first-name")).sendKeys(firstName);
-
-			System.out.println("[PASS] First name entered.");
-
-			System.out.println("[INFO] Entering last name...");
-
-			driver.findElement(By.id("last-name")).sendKeys(lastName);
-
-			System.out.println("[PASS] Last name entered.");
-
-			System.out.println("[INFO] Entering postal code...");
-
-			driver.findElement(By.id("postal-code")).sendKeys(postalCode);
-
-			System.out.println("[PASS] Postal code entered.");
-
-			System.out.println("[INFO] Clicking Continue button...");
-
-			driver.findElement(By.id("continue")).click();
-
-			System.out.println("[PASS] Checkout overview page opened.");
-
-			// ============================================================
-			// STEP 11: VERIFY CHECKOUT OVERVIEW
-			// ============================================================
-
-			System.out.println("------------------------------------------------------------");
-			System.out.println("[STEP 5] VERIFY CHECKOUT OVERVIEW");
-			System.out.println("------------------------------------------------------------");
-
-			System.out.println("[INFO] Verifying product on checkout overview...");
-
-			String checkoutProduct = driver.findElement(By.className("inventory_item_name")).getText();
-
-			if (checkoutProduct.equals("Sauce Labs Backpack")) {
-				System.out.println("[PASS] Product verified on checkout overview.");
-			} else {
-				System.out.println("[FAIL] Product verification failed.");
-				throw new RuntimeException("Product missing from checkout overview.");
-			}
-
-			// ============================================================
-			// STEP 12: FINISH ORDER
-			// ============================================================
-
-			System.out.println("[INFO] Clicking Finish button...");
-
-			driver.findElement(By.id("finish")).click();
-
-			System.out.println("[PASS] Finish button clicked.");
-
-			// ============================================================
-			// STEP 13: VERIFY ORDER SUCCESS
-			// ============================================================
-
-			System.out.println("------------------------------------------------------------");
-			System.out.println("[STEP 6] VERIFY ORDER COMPLETION");
-			System.out.println("------------------------------------------------------------");
-
-			String confirmationMessage = driver.findElement(By.className("complete-header")).getText();
-
-			if (confirmationMessage.equals("Thank you for your order!")) {
-
-				System.out.println("[PASS] Order placed successfully.");
-				System.out.println("[INFO] Confirmation message: " + confirmationMessage);
-
-			} else {
-
-				System.out.println("[FAIL] Order confirmation verification failed.");
-
-				throw new RuntimeException("Order confirmation message not found.");
-			}
-
-			// ============================================================
-			// STEP 14: LOGOUT
-			// ============================================================
-
-			System.out.println("------------------------------------------------------------");
-			System.out.println("[STEP 7] LOGOUT");
-			System.out.println("------------------------------------------------------------");
-
-			System.out.println("[INFO] Opening application menu...");
-
-			driver.findElement(By.id("react-burger-menu-btn")).click();
-
-			System.out.println("[PASS] Application menu opened.");
-
-			System.out.println("[INFO] Clicking Logout...");
-
-			driver.findElement(By.id("logout_sidebar_link")).click();
-
-			System.out.println("[PASS] Logout button clicked.");
-
-			// Verify logout
-			if (driver.getCurrentUrl().equals(url)) {
-
-				System.out.println("[PASS] Logout successful.");
-				System.out.println("[INFO] User returned to Login page.");
-
-			} else {
-
-				System.out.println("[FAIL] Logout verification failed.");
-
-				throw new RuntimeException("User was not redirected to Login page.");
-			}
-
-			// ============================================================
-			// FINAL TEST RESULT
-			// ============================================================
-
-			System.out.println("============================================================");
-			System.out.println("             END-TO-END TEST PASSED");
-			System.out.println("============================================================");
-
-		} catch (Exception e) {
-
-			System.out.println("============================================================");
-			System.out.println("             END-TO-END TEST FAILED");
-			System.out.println("============================================================");
-
-			System.out.println("[ERROR] Test execution failed.");
-			System.out.println("[ERROR] Reason: " + e.getMessage());
-
-			e.printStackTrace();
-
-		} finally {
-
-			// ============================================================
-			// STEP 15: CLOSE BROWSER
-			// ============================================================
-
-			System.out.println("------------------------------------------------------------");
-			System.out.println("[CLEANUP] Closing browser...");
-			System.out.println("------------------------------------------------------------");
-
-//			driver.quit();
-
-			System.out.println("[PASS] Browser closed successfully.");
-
-			System.out.println("============================================================");
-			System.out.println("             TEST EXECUTION COMPLETED");
-			System.out.println("============================================================");
+			System.out.println("[FAIL] Login failed.");
+			throw new RuntimeException("Login verification failed.");
 		}
+
+		// ============================================================
+		// STEP 6: ADD PRODUCT TO CART
+		// ============================================================
+
+		System.out.println("------------------------------------------------------------");
+		System.out.println("[STEP 2] ADD PRODUCT TO CART");
+		System.out.println("------------------------------------------------------------");
+
+		System.out.println("[INFO] Selecting product: Sauce Labs Backpack");
+
+		hp.getAddTocartButton().click();
+
+		System.out.println("[PASS] Sauce Labs Backpack added to cart.");
+
+		// Verify cart badge
+		String cartCount = hp.getShoppingCartBadge().getText();
+
+		if (cartCount.equals("1")) {
+
+			System.out.println("[PASS] Cart contains 1 product.");
+
+		} else {
+
+			System.out.println("[FAIL] Product count verification failed.");
+			throw new RuntimeException("Cart count is not 1.");
+		}
+
+		// ============================================================
+		// STEP 7: OPEN CART
+		// ============================================================
+
+		System.out.println("------------------------------------------------------------");
+		System.out.println("[STEP 3] OPEN SHOPPING CART");
+		System.out.println("------------------------------------------------------------");
+
+		System.out.println("[INFO] Clicking shopping cart icon...");
+
+		hp.getShoppingCartLink().click();
+
+		System.out.println("[PASS] Shopping cart page opened.");
+
+		// Verify cart page
+		if (driver.getCurrentUrl().contains("cart.html")) {
+
+			System.out.println("[PASS] Cart page URL verified.");
+
+		} else {
+
+			System.out.println("[FAIL] Cart page verification failed.");
+			throw new RuntimeException("Cart page was not opened.");
+		}
+
+		// ============================================================
+		// STEP 8: VERIFY PRODUCT IN CART
+		// ============================================================
+
+		System.out.println("[INFO] Verifying product in shopping cart...");
+
+		String productName = cp.getProductName().getText();
+
+		if (productName.equals("Sauce Labs Backpack")) {
+
+			System.out.println("[PASS] Product verified in cart: " + productName);
+
+		} else {
+
+			System.out.println("[FAIL] Expected product not found in cart.");
+			throw new RuntimeException("Product verification failed.");
+		}
+
+		// ============================================================
+		// STEP 9: CHECKOUT
+		// ============================================================
+
+		System.out.println("------------------------------------------------------------");
+		System.out.println("[STEP 4] CHECKOUT");
+		System.out.println("------------------------------------------------------------");
+
+		System.out.println("[INFO] Clicking Checkout button...");
+
+		cp.getCheckoutButton().click();
+
+		System.out.println("[PASS] Checkout information page opened.");
+
+		// ============================================================
+		// STEP 10: ENTER CHECKOUT INFORMATION
+		// ============================================================
+
+		System.out.println("[INFO] Entering first name...");
+
+		cip.getFirstNameField().sendKeys(firstName);
+
+		System.out.println("[PASS] First name entered.");
+
+		System.out.println("[INFO] Entering last name...");
+
+		cip.getLastNameField().sendKeys(lastName);
+
+		System.out.println("[PASS] Last name entered.");
+
+		System.out.println("[INFO] Entering postal code...");
+
+		cip.getPostalCodeField().sendKeys(postalCode);
+
+		System.out.println("[PASS] Postal code entered.");
+
+		System.out.println("[INFO] Clicking Continue button...");
+
+		cip.getContinueButton().click();
+
+		System.out.println("[PASS] Checkout overview page opened.");
+
+		// ============================================================
+		// STEP 11: VERIFY CHECKOUT OVERVIEW
+		// ============================================================
+
+		System.out.println("------------------------------------------------------------");
+		System.out.println("[STEP 5] VERIFY CHECKOUT OVERVIEW");
+		System.out.println("------------------------------------------------------------");
+
+		System.out.println("[INFO] Verifying product on checkout overview...");
+
+		String checkoutProduct = cp.getProductName().getText();
+
+		if (checkoutProduct.equals("Sauce Labs Backpack")) {
+
+			System.out.println("[PASS] Product verified on checkout overview.");
+
+		} else {
+
+			System.out.println("[FAIL] Product verification failed.");
+			throw new RuntimeException("Product missing from checkout overview.");
+		}
+
+		// ============================================================
+		// STEP 12: FINISH ORDER
+		// ============================================================
+
+		System.out.println("[INFO] Clicking Finish button...");
+
+		cop.getFinishButton().click();
+
+		System.out.println("[PASS] Finish button clicked.");
+
+		// ============================================================
+		// STEP 13: VERIFY ORDER SUCCESS
+		// ============================================================
+
+//        System.out.println("------------------------------------------------------------");
+//        System.out.println("[STEP 6] VERIFY ORDER COMPLETION");
+//        System.out.println("------------------------------------------------------------");
+
+		String confirmationMessage = ccp.getConfirmationMessage().getText();
+
+		if (confirmationMessage.equals("Thank you for your order!")) {
+
+			System.out.println("[PASS] Order placed successfully.");
+			System.out.println("[INFO] Confirmation message: " + confirmationMessage);
+
+		} else {
+
+			System.out.println("[FAIL] Order confirmation verification failed.");
+
+			throw new RuntimeException("Order confirmation message not found.");
+		}
+
+		// ============================================================
+		// STEP 14: LOGOUT
+		// ============================================================
+
+		System.out.println("------------------------------------------------------------");
+		System.out.println("[STEP 7] LOGOUT");
+		System.out.println("------------------------------------------------------------");
+
+		System.out.println("[INFO] Opening application menu...");
+
+		hp.getMenuButton().click();
+
+		System.out.println("[PASS] Application menu opened.");
+
+		System.out.println("[INFO] Clicking Logout...");
+
+		hp.getLogoutButton().click();
+
+		System.out.println("[PASS] Logout button clicked.");
+
+		// Verify logout
+		if (driver.getCurrentUrl().equals(url)) {
+
+			System.out.println("[PASS] Logout successful.");
+			System.out.println("[INFO] User returned to Login page.");
+
+		} else {
+
+			System.out.println("[FAIL] Logout verification failed.");
+
+			throw new RuntimeException("User was not redirected to Login page.");
+		}
+
+		// ============================================================
+		// FINAL TEST RESULT
+		// ============================================================
+
+		System.out.println("============================================================");
+		System.out.println("             END-TO-END TEST PASSED");
+		System.out.println("============================================================");
+
+		// ============================================================
+		// STEP 15: CLOSE BROWSER
+		// ============================================================
+
+		System.out.println("------------------------------------------------------------");
+		System.out.println("[CLEANUP] Closing browser...");
+		System.out.println("------------------------------------------------------------");
+
+		driver.quit();
+
+		System.out.println("[PASS] Browser closed successfully.");
+
+		System.out.println("============================================================");
+		System.out.println("             TEST EXECUTION COMPLETED");
+		System.out.println("============================================================");
 	}
 }

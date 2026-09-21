@@ -10,11 +10,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.interactions.Actions;
 
 import generic_utility.FileUtility;
 import generic_utility.JavaUtility;
 import generic_utility.WebDriverUtility;
+import object_repository_vtiger.HomePage;
+import object_repository_vtiger.LoginPage;
 
 /**
  * Test Script: Create Organization
@@ -48,6 +49,7 @@ public class CreateOrgTest {
 	 */
 	public static void main(String[] args) throws InterruptedException, IOException, ParseException {
 
+		
 //		get data from json file
 //		FileReader fr = new FileReader("./src/test/resources/cd.json");
 //		JSONParser parser = new JSONParser();
@@ -85,6 +87,9 @@ public class CreateOrgTest {
 		else
 			driver = new ChromeDriver();
 
+		LoginPage lp = new LoginPage(driver);
+		HomePage hp = new HomePage(driver);
+		
 		System.out.println("[INFO] Maximizing browser window...");
 		driver.manage().window().maximize();
 
@@ -99,9 +104,10 @@ public class CreateOrgTest {
 		// Login
 		System.out.println("[INFO] Starting login process...");
 
-		WebElement usernameField = driver.findElement(By.name("user_name"));
-		WebElement passwordField = driver.findElement(By.name("user_password"));
-		WebElement loginButton = driver.findElement(By.id("submitButton"));
+		
+		WebElement usernameField = lp.getUsername();
+		WebElement passwordField = lp.getPassword();
+		WebElement loginButton = lp.getLoginButton();
 
 		System.out.println("[INFO] Entering username...");
 		usernameField.sendKeys(username);
@@ -125,7 +131,8 @@ public class CreateOrgTest {
 
 //		String orgName = FileUtility.getDataFromExcelFile("org", 3, 0) + +random;
 		System.out.println("[INFO] Navigating to Organizations module...");
-		driver.findElement(By.linkText("Organizations")).click();
+//		driver.findElement(By.linkText("Organizations")).click();
+		hp.getOrgLink().click();
 
 		System.out.println("[INFO] Opening Create Organization page...");
 		driver.findElement(By.cssSelector("img[title='Create Organization...']")).click();

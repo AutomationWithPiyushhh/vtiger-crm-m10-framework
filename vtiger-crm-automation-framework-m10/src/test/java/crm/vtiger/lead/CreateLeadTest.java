@@ -8,6 +8,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 
+import object_repository_vtiger.LoginPage;
+
 /**
  * Test Script: Create Lead
  *
@@ -111,17 +113,23 @@ public class CreateLeadTest {
 		System.out.println("[INFO] Starting login process...");
 		System.out.println("--------------------------------------------------");
 
-		WebElement username = driver.findElement(By.name("user_name"));
-		WebElement password = driver.findElement(By.name("user_password"));
-		WebElement loginButton = driver.findElement(By.id("submitButton"));
+//		WebElement username = driver.findElement(By.name("user_name"));
+//		WebElement password = driver.findElement(By.name("user_password"));
+//		WebElement loginButton = driver.findElement(By.id("submitButton"));
 
+		LoginPage lp = new LoginPage(driver);
+		
+		WebElement usernameField = lp.getUsername();
+		WebElement passwordField = lp.getPassword();
+		WebElement loginButton = lp.getLoginButton();
+		
 		System.out.println("[INFO] Entering username...");
-		username.sendKeys("admin");
+		usernameField.sendKeys("admin");
 
 		System.out.println("[PASS] Username entered successfully.");
 
 		System.out.println("[INFO] Entering password...");
-		password.sendKeys("admin");
+		passwordField.sendKeys("admin");
 
 		System.out.println("[PASS] Password entered successfully.");
 
