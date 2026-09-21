@@ -14,8 +14,8 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import generic_utility.FileUtility;
 import generic_utility.JavaUtility;
 import generic_utility.WebDriverUtility;
-import object_repository_vtiger.HomePage;
-import object_repository_vtiger.LoginPage;
+import object_repository.HomePage;
+import object_repository.LoginPage;
 
 /**
  * Test Script: Create Organization

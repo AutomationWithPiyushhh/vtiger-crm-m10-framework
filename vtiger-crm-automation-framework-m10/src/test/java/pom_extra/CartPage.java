@@ -1,30 +1,27 @@
-package object_repository_sauce;
+package pom_extra;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+public class CartPage {
 
 	// ============================================================
-	// LOGIN PAGE
+	// CART PAGE
 	// ============================================================
 
-	@FindBy(id = "user-name")
-	private WebElement usernameField;
+	@FindBy(className = "inventory_item_name")
+	private WebElement productName;
 
-	@FindBy(id = "password")
-	private WebElement passwordField;
-
-	@FindBy(id = "login-button")
-	private WebElement loginButton;
+	@FindBy(id = "checkout")
+	private WebElement checkoutButton;
 
 	// ============================================================
 	// CONSTRUCTOR
 	// ============================================================
 
-	public LoginPage(WebDriver driver) {
+	public CartPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 
@@ -32,16 +29,12 @@ public class LoginPage {
 	// GETTER METHODS
 	// ============================================================
 
-	public WebElement getUsernameField() {
-		return usernameField;
+	public WebElement getProductName() {
+		return productName;
 	}
 
-	public WebElement getPasswordField() {
-		return passwordField;
-	}
-
-	public WebElement getLoginButton() {
-		return loginButton;
+	public WebElement getCheckoutButton() {
+		return checkoutButton;
 	}
 
 }

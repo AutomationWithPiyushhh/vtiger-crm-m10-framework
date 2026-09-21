@@ -6,13 +6,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.PageFactory;
 
-import object_repository_sauce.CartPage;
-import object_repository_sauce.CheckOutCompletionPge;
-import object_repository_sauce.CheckOutInfoPage;
-import object_repository_sauce.CheckOutOverViewPge;
-import object_repository_sauce.HomePage;
-import object_repository_sauce.LoginPage;
-
 public class SacueDemoTest {
 
 	

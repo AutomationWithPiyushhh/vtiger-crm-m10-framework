@@ -1,27 +1,33 @@
-package object_repository_sauce;
+package pom_extra;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CartPage {
+public class CheckOutInfoPage {
 
 	// ============================================================
-	// CART PAGE
+	// CHECKOUT INFORMATION PAGE
 	// ============================================================
 
-	@FindBy(className = "inventory_item_name")
-	private WebElement productName;
+	@FindBy(id = "first-name")
+	private WebElement firstNameField;
 
-	@FindBy(id = "checkout")
-	private WebElement checkoutButton;
+	@FindBy(id = "last-name")
+	private WebElement lastNameField;
+
+	@FindBy(id = "postal-code")
+	private WebElement postalCodeField;
+
+	@FindBy(id = "continue")
+	private WebElement continueButton;
 
 	// ============================================================
 	// CONSTRUCTOR
 	// ============================================================
 
-	public CartPage(WebDriver driver) {
+	public CheckOutInfoPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 
@@ -29,12 +35,20 @@ public class CartPage {
 	// GETTER METHODS
 	// ============================================================
 
-	public WebElement getProductName() {
-		return productName;
+	public WebElement getFirstNameField() {
+		return firstNameField;
 	}
 
-	public WebElement getCheckoutButton() {
-		return checkoutButton;
+	public WebElement getLastNameField() {
+		return lastNameField;
+	}
+
+	public WebElement getPostalCodeField() {
+		return postalCodeField;
+	}
+
+	public WebElement getContinueButton() {
+		return continueButton;
 	}
 
 }

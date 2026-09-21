@@ -1,13 +1,13 @@
-package object_repository_vtiger;
+package object_repository;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+public class ContactPage {
 //	constructor
-	public LoginPage(WebDriver driver) {
+	public ContactPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 	

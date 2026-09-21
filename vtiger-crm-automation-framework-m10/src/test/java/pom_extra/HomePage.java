@@ -1,4 +1,4 @@
-package object_repository_sauce;
+package pom_extra;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

@@ -1,24 +1,24 @@
-package object_repository_sauce;
+package pom_extra;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CheckOutOverViewPge {
+public class CheckOutCompletionPge {
 
 	// ============================================================
 	// CHECKOUT OVERVIEW PAGE
 	// ============================================================
 
-	@FindBy(id = "finish")
-	private WebElement finishButton;
+	@FindBy(xpath = "//h2[text()='Thank you for your order!']")
+	private WebElement ConfirmationMessage;
 
 	// ============================================================
 	// CONSTRUCTOR
 	// ============================================================
 
-	public CheckOutOverViewPge(WebDriver driver) {
+	public CheckOutCompletionPge(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
 
@@ -26,8 +26,9 @@ public class CheckOutOverViewPge {
 	// GETTER METHODS
 	// ============================================================
 
-	public WebElement getFinishButton() {
-		return finishButton;
+	public WebElement getConfirmationMessage() {
+		return ConfirmationMessage;
 	}
+
 
 }

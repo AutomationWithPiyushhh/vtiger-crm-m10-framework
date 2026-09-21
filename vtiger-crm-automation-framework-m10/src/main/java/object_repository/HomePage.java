@@ -1,4 +1,4 @@
-package object_repository_vtiger;
+package object_repository;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
