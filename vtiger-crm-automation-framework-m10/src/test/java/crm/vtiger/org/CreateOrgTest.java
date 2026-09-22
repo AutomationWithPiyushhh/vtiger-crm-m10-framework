@@ -5,6 +5,7 @@ import java.time.Duration;
 
 import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -49,7 +50,6 @@ public class CreateOrgTest {
 	 */
 	public static void main(String[] args) throws InterruptedException, IOException, ParseException {
 
-		
 //		get data from json file
 //		FileReader fr = new FileReader("./src/test/resources/cd.json");
 //		JSONParser parser = new JSONParser();
@@ -89,7 +89,8 @@ public class CreateOrgTest {
 
 		LoginPage lp = new LoginPage(driver);
 		HomePage hp = new HomePage(driver);
-		
+		WebDriverUtility wdUtil = new WebDriverUtility(driver);
+
 		System.out.println("[INFO] Maximizing browser window...");
 		driver.manage().window().maximize();
 
@@ -104,19 +105,20 @@ public class CreateOrgTest {
 		// Login
 		System.out.println("[INFO] Starting login process...");
 
-		
-		WebElement usernameField = lp.getUsername();
-		WebElement passwordField = lp.getPassword();
-		WebElement loginButton = lp.getLoginButton();
+//		WebElement usernameField = lp.getUsername();
+//		WebElement passwordField = lp.getPassword();
+//		WebElement loginButton = lp.getLoginButton();
 
-		System.out.println("[INFO] Entering username...");
-		usernameField.sendKeys(username);
+//		System.out.println("[INFO] Entering username...");
+//		usernameField.sendKeys(username);
+//
+//		System.out.println("[INFO] Entering password...");
+//		passwordField.sendKeys(password);
+//
+//		System.out.println("[INFO] Clicking Login button...");
+//		loginButton.click();
 
-		System.out.println("[INFO] Entering password...");
-		passwordField.sendKeys(password);
-
-		System.out.println("[INFO] Clicking Login button...");
-		loginButton.click();
+		lp.login(username, password);
 
 		System.out.println("[INFO] Login process completed.");
 
@@ -146,6 +148,23 @@ public class CreateOrgTest {
 		System.out.println("[INFO] Entering Organization Name...");
 		orgField.sendKeys(orgName);
 
+//		add members of 
+		driver.findElement(By.cssSelector("[src='themes/softed/images/select.gif']")).click();
+
+		String PID = driver.getWindowHandle();
+
+		wdUtil.switchToWindowByUrl("TasksEditView");
+
+		String orgName2 = FileUtility.getDataFromExcelFile("org", 12, 0);
+
+		driver.findElement(By.name("search_text")).sendKeys(orgName2 + Keys.ENTER);
+
+		driver.findElement(By.xpath("//a[text()='" + orgName2 + "']")).click();
+		driver.switchTo().alert().accept();
+
+		driver.switchTo().window(PID);
+		Thread.sleep(3000);
+
 		// Save
 		System.out.println("[INFO] Saving Organization...");
 		driver.findElement(By.cssSelector("input[title='Save [Alt+S]']")).click();
@@ -169,11 +188,9 @@ public class CreateOrgTest {
 		// Logout
 		System.out.println("[INFO] Starting logout process...");
 
-		WebElement profileIcon = driver.findElement(By.cssSelector("img[src='themes/softed/images/user.PNG']"));
+		WebElement profileIcon = hp.getProfileIcon();
 
 		System.out.println("[INFO] Hovering over profile icon...");
-
-		WebDriverUtility wdUtil = new WebDriverUtility(driver);
 
 //		Actions act = new Actions(driver);
 //		act.moveToElement(profileIcon).build().perform();

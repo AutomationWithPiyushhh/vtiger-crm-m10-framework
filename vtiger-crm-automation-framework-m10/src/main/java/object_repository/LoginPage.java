@@ -23,15 +23,22 @@ public class LoginPage {
 	private WebElement loginButton;
 	
 //	getters
-	public WebElement getUsername() {
-		return username;
-	}
-
-	public WebElement getPassword() {
-		return password;
-	}
-
-	public WebElement getLoginButton() {
-		return loginButton;
+//	public WebElement getUsername() {
+//		return username;
+//	}
+//
+//	public WebElement getPassword() {
+//		return password;
+//	}
+//
+//	public WebElement getLoginButton() {
+//		return loginButton;
+//	}
+	
+//	Business utility
+	public void login(String un, String pwd) {
+		username.sendKeys(un);
+		password.sendKeys(pwd);
+		loginButton.click();
 	}
 }

@@ -119,23 +119,25 @@ public class CreateLeadTest {
 
 		LoginPage lp = new LoginPage(driver);
 		
-		WebElement usernameField = lp.getUsername();
-		WebElement passwordField = lp.getPassword();
-		WebElement loginButton = lp.getLoginButton();
+//		WebElement usernameField = lp.getUsername();
+//		WebElement passwordField = lp.getPassword();
+//		WebElement loginButton = lp.getLoginButton();
+//		
+//		System.out.println("[INFO] Entering username...");
+//		usernameField.sendKeys("admin");
+//
+//		System.out.println("[PASS] Username entered successfully.");
+//
+//		System.out.println("[INFO] Entering password...");
+//		passwordField.sendKeys("admin");
+//		
+//		System.out.println("[PASS] Password entered successfully.");
+//
+//		System.out.println("[INFO] Clicking Login button...");
+//		loginButton.click();
+
+		lp.login("admin", "admin");
 		
-		System.out.println("[INFO] Entering username...");
-		usernameField.sendKeys("admin");
-
-		System.out.println("[PASS] Username entered successfully.");
-
-		System.out.println("[INFO] Entering password...");
-		passwordField.sendKeys("admin");
-
-		System.out.println("[PASS] Password entered successfully.");
-
-		System.out.println("[INFO] Clicking Login button...");
-		loginButton.click();
-
 		System.out.println("[PASS] Login completed successfully.");
 
 		// ==================================================
