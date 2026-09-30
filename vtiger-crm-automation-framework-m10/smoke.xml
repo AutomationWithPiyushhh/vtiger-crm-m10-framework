@@ -1,0 +1,14 @@
+<suite>
+	<groups>
+		<run>
+			<exclude name="smoke" />
+		</run>	
+	</groups>
+	<test name="test1">
+		<classes>
+			<class name = "types_of_exe.OrgTest" />
+			<class name = "types_of_exe.ContactTest" />
+			<class name = "types_of_exe.LeadTest" />
+		</classes>
+	</test>
+</suite>
