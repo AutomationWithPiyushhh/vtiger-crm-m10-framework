@@ -1,0 +1,9 @@
+<suite name="batch-suite">
+	<test name="test1">
+		<parameter name="un" value="xyz" />
+		<parameter name="pwd" value="abc" />
+		<classes>
+			<class name="types_of_exe.OrgTest" />
+		</classes>		
+		</test>
+</suite>
