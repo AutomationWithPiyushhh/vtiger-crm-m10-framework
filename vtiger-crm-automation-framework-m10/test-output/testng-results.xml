@@ -1,64 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="6" total="9" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-10-01T09:16:50 IST" name="Suite" finished-at="2026-10-01T09:17:00 IST" duration-ms="10532">
+  <suite started-at="2026-10-05T09:24:29 IST" name="Default suite" finished-at="2026-10-05T09:24:30 IST" duration-ms="557">
     <groups>
-      <group name="reg">
-        <method signature="LeadTest.createLeadTest(java.lang.String)[pri:0, instance:types_of_exe.LeadTest@34e9fd99]" name="createLeadTest" class="types_of_exe.LeadTest"/>
-        <method signature="LeadTest.createLeadTest(java.lang.String)[pri:0, instance:types_of_exe.LeadTest@2df3b89c]" name="createLeadTest" class="types_of_exe.LeadTest"/>
-        <method signature="LeadTest.createLeadTest(java.lang.String)[pri:0, instance:types_of_exe.LeadTest@70325e14]" name="createLeadTest" class="types_of_exe.LeadTest"/>
-      </group> <!-- reg -->
-      <group name="smoke">
-        <method signature="LeadTest.createLeadTest(java.lang.String)[pri:0, instance:types_of_exe.LeadTest@34e9fd99]" name="createLeadTest" class="types_of_exe.LeadTest"/>
-        <method signature="LeadTest.createLeadTest(java.lang.String)[pri:0, instance:types_of_exe.LeadTest@2df3b89c]" name="createLeadTest" class="types_of_exe.LeadTest"/>
-        <method signature="LeadTest.createLeadTest(java.lang.String)[pri:0, instance:types_of_exe.LeadTest@70325e14]" name="createLeadTest" class="types_of_exe.LeadTest"/>
-      </group> <!-- smoke -->
     </groups>
-    <test started-at="2026-10-01T09:16:50 IST" name="Test1" finished-at="2026-10-01T09:16:55 IST" duration-ms="5677">
-      <class name="types_of_exe.LeadTest">
-        <test-method signature="createLeadTest(java.lang.String)[pri:0, instance:types_of_exe.LeadTest@34e9fd99]" started-at="2026-10-01T09:16:50 IST" name="createLeadTest" finished-at="2026-10-01T09:16:55 IST" duration-ms="5613" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[chrome]]>
-              </value>
-            </param>
-          </params>
+    <test started-at="2026-10-05T09:24:29 IST" name="Default test" finished-at="2026-10-05T09:24:30 IST" duration-ms="557">
+      <class name="learning_reports.SauceDemoTest">
+        <test-method signature="login()[pri:0, instance:learning_reports.SauceDemoTest@45752059]" started-at="2026-10-05T09:24:29 IST" name="login" finished-at="2026-10-05T09:24:30 IST" duration-ms="516" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- createLeadTest -->
-      </class> <!-- types_of_exe.LeadTest -->
-    </test> <!-- Test1 -->
-    <test started-at="2026-10-01T09:16:50 IST" name="Test2" finished-at="2026-10-01T09:16:55 IST" duration-ms="5738">
-      <class name="types_of_exe.LeadTest">
-        <test-method signature="createLeadTest(java.lang.String)[pri:0, instance:types_of_exe.LeadTest@2df3b89c]" started-at="2026-10-01T09:16:50 IST" name="createLeadTest" finished-at="2026-10-01T09:16:55 IST" duration-ms="5686" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[edge]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createLeadTest -->
-      </class> <!-- types_of_exe.LeadTest -->
-    </test> <!-- Test2 -->
-    <test started-at="2026-10-01T09:16:50 IST" name="Test3" finished-at="2026-10-01T09:17:00 IST" duration-ms="10532">
-      <class name="types_of_exe.LeadTest">
-        <test-method signature="createLeadTest(java.lang.String)[pri:0, instance:types_of_exe.LeadTest@70325e14]" started-at="2026-10-01T09:16:50 IST" name="createLeadTest" finished-at="2026-10-01T09:17:00 IST" duration-ms="10481" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[firefox]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createLeadTest -->
-      </class> <!-- types_of_exe.LeadTest -->
-    </test> <!-- Test3 -->
-  </suite> <!-- Suite -->
+        </test-method> <!-- login -->
+      </class> <!-- learning_reports.SauceDemoTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
