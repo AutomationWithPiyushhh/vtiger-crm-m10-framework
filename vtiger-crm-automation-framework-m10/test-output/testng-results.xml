@@ -1,17 +1,231 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
+    <line>
+      <![CDATA[[INFO] Launching chrome browser...]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Maximizing browser window...]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Configuring implicit wait: 15 seconds...]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Navigating to Vtiger CRM application...]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Application launched successfully.]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Starting login process...]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Login process completed successfully.]]>
+    </line>
+    <line>
+      <![CDATA[==============================================]]>
+    </line>
+    <line>
+      <![CDATA[       CREATE ORGANIZATION TEST STARTED       ]]>
+    </line>
+    <line>
+      <![CDATA[==============================================]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Navigating to Organizations module...]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Opening Create Organization page...]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Generated Organization Name: BlueWave Technologies_9900]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Entering Organization Name...]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Opening member selection window...]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Switching to member selection window...]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Searching for organization/member: Vtiger813]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Selecting organization/member...]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Accepting alert...]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Switching back to Organization window...]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Saving Organization...]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Organization save operation completed.]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Starting Organization creation verification...]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Expected Organization Name: BlueWave Technologies_9900]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Actual Organization Name: BlueWave Technologies_9900]]>
+    </line>
+    <line>
+      <![CDATA[==============================================]]>
+    </line>
+    <line>
+      <![CDATA[       CREATE ORGANIZATION TEST FINISHED      ]]>
+    </line>
+    <line>
+      <![CDATA[==============================================]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Starting logout process...]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Hovering over profile icon...]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Clicking Sign Out...]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Logout completed successfully.]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Closing browser...]]>
+    </line>
   </reporter-output>
-  <suite started-at="2026-10-05T09:24:29 IST" name="Default suite" finished-at="2026-10-05T09:24:30 IST" duration-ms="557">
+  <suite started-at="2026-10-06T09:24:56 IST" name="Default suite" finished-at="2026-10-06T09:25:28 IST" duration-ms="32669">
     <groups>
     </groups>
-    <test started-at="2026-10-05T09:24:29 IST" name="Default test" finished-at="2026-10-05T09:24:30 IST" duration-ms="557">
-      <class name="learning_reports.SauceDemoTest">
-        <test-method signature="login()[pri:0, instance:learning_reports.SauceDemoTest@45752059]" started-at="2026-10-05T09:24:29 IST" name="login" finished-at="2026-10-05T09:24:30 IST" duration-ms="516" status="PASS">
+    <test started-at="2026-10-06T09:24:56 IST" name="Default test" finished-at="2026-10-06T09:25:28 IST" duration-ms="32669">
+      <class name="crm.vtiger.org.OrgTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:crm.vtiger.org.OrgTest@710f4dc7]" started-at="2026-10-06T09:24:56 IST" name="setUp" finished-at="2026-10-06T09:24:57 IST" duration-ms="1543" status="PASS">
           <reporter-output>
+            <line>
+              <![CDATA[[INFO] Launching chrome browser...]]>
+            </line>
+            <line>
+              <![CDATA[[INFO] Maximizing browser window...]]>
+            </line>
+            <line>
+              <![CDATA[[INFO] Configuring implicit wait: 15 seconds...]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="login()[pri:0, instance:crm.vtiger.org.OrgTest@710f4dc7]" started-at="2026-10-06T09:24:57 IST" name="login" finished-at="2026-10-06T09:25:01 IST" duration-ms="3658" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[[INFO] Navigating to Vtiger CRM application...]]>
+            </line>
+            <line>
+              <![CDATA[[INFO] Application launched successfully.]]>
+            </line>
+            <line>
+              <![CDATA[[INFO] Starting login process...]]>
+            </line>
+            <line>
+              <![CDATA[[INFO] Login process completed successfully.]]>
+            </line>
           </reporter-output>
         </test-method> <!-- login -->
-      </class> <!-- learning_reports.SauceDemoTest -->
+        <test-method signature="createOrgTest()[pri:0, instance:crm.vtiger.org.OrgTest@710f4dc7]" started-at="2026-10-06T09:25:01 IST" name="createOrgTest" finished-at="2026-10-06T09:25:12 IST" duration-ms="11099" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[==============================================]]>
+            </line>
+            <line>
+              <![CDATA[       CREATE ORGANIZATION TEST STARTED       ]]>
+            </line>
+            <line>
+              <![CDATA[==============================================]]>
+            </line>
+            <line>
+              <![CDATA[[INFO] Navigating to Organizations module...]]>
+            </line>
+            <line>
+              <![CDATA[[INFO] Opening Create Organization page...]]>
+            </line>
+            <line>
+              <![CDATA[[INFO] Generated Organization Name: BlueWave Technologies_9900]]>
+            </line>
+            <line>
+              <![CDATA[[INFO] Entering Organization Name...]]>
+            </line>
+            <line>
+              <![CDATA[[INFO] Opening member selection window...]]>
+            </line>
+            <line>
+              <![CDATA[[INFO] Switching to member selection window...]]>
+            </line>
+            <line>
+              <![CDATA[[INFO] Searching for organization/member: Vtiger813]]>
+            </line>
+            <line>
+              <![CDATA[[INFO] Selecting organization/member...]]>
+            </line>
+            <line>
+              <![CDATA[[INFO] Accepting alert...]]>
+            </line>
+            <line>
+              <![CDATA[[INFO] Switching back to Organization window...]]>
+            </line>
+            <line>
+              <![CDATA[[INFO] Saving Organization...]]>
+            </line>
+            <line>
+              <![CDATA[[INFO] Organization save operation completed.]]>
+            </line>
+            <line>
+              <![CDATA[[INFO] Starting Organization creation verification...]]>
+            </line>
+            <line>
+              <![CDATA[[INFO] Expected Organization Name: BlueWave Technologies_9900]]>
+            </line>
+            <line>
+              <![CDATA[[INFO] Actual Organization Name: BlueWave Technologies_9900]]>
+            </line>
+            <line>
+              <![CDATA[==============================================]]>
+            </line>
+            <line>
+              <![CDATA[       CREATE ORGANIZATION TEST FINISHED      ]]>
+            </line>
+            <line>
+              <![CDATA[==============================================]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- createOrgTest -->
+        <test-method is-config="true" signature="logout()[pri:0, instance:crm.vtiger.org.OrgTest@710f4dc7]" started-at="2026-10-06T09:25:12 IST" name="logout" finished-at="2026-10-06T09:25:28 IST" duration-ms="16018" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[[INFO] Starting logout process...]]>
+            </line>
+            <line>
+              <![CDATA[[INFO] Hovering over profile icon...]]>
+            </line>
+            <line>
+              <![CDATA[[INFO] Clicking Sign Out...]]>
+            </line>
+            <line>
+              <![CDATA[[INFO] Logout completed successfully.]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:crm.vtiger.org.OrgTest@710f4dc7]" started-at="2026-10-06T09:25:28 IST" name="tearDown" finished-at="2026-10-06T09:25:28 IST" duration-ms="298" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[[INFO] Closing browser...]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- crm.vtiger.org.OrgTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

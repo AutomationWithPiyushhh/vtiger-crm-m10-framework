@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\User\AppData\Local\Temp\testng-eclipse--1361278430\testng-customsuite.xml</span>
+                    <span>C:\Users\User\AppData\Local\Temp\testng-eclipse--1439725561\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -103,7 +103,7 @@
                     <div class="method-list-content passed suite-Default_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="learning_reports.SauceDemoTest" class="method navigator-link" hash-for-method="login">login</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Default_suite" title="crm.vtiger.org.OrgTest" class="method navigator-link" hash-for-method="createOrgTest">createOrgTest</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Default_suite -->
@@ -121,14 +121,14 @@
           <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">learning_reports.SauceDemoTest</span>
+              <span class="class-name">crm.vtiger.org.OrgTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="login">
-                  </a> <!-- login -->
-                  <span class="method-name">login</span>
+                  <a name="createOrgTest">
+                  </a> <!-- createOrgTest -->
+                  <span class="method-name">createOrgTest</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -136,7 +136,7 @@
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\User\AppData\Local\Temp\testng-eclipse--1361278430\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\User\AppData\Local\Temp\testng-eclipse--1439725561\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -145,7 +145,11 @@
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;learning_reports.SauceDemoTest&quot;/&gt;
+      &lt;class name=&quot;crm.vtiger.org.OrgTest&quot;&gt;
+        &lt;methods&gt;
+          &lt;include name=&quot;createOrgTest&quot;/&gt;
+        &lt;/methods&gt;
+      &lt;/class&gt; &lt;!-- crm.vtiger.org.OrgTest --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -187,14 +191,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'login')
-data.setCell(0, 2, 'learning_reports.SauceDemoTest')
-data.setCell(0, 3, 516);
+data.setCell(0, 1, 'createOrgTest')
+data.setCell(0, 2, 'crm.vtiger.org.OrgTest')
+data.setCell(0, 3, 11099);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 516 ms</span>
+              <span class="suite-total-time">Total running time: 11 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -205,6 +209,32 @@ return data;
             <span class="header-content">Reporter output for Default suite</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
+            <div class="reporter-method-div">
+              <span class="reporter-method-name">createOrgTest</span>
+              <div class="reporter-method-output-div">
+                <span class="reporter-method-output">==============================================</span>
+                <span class="reporter-method-output">       CREATE ORGANIZATION TEST STARTED       </span>
+                <span class="reporter-method-output">==============================================</span>
+                <span class="reporter-method-output">[INFO] Navigating to Organizations module...</span>
+                <span class="reporter-method-output">[INFO] Opening Create Organization page...</span>
+                <span class="reporter-method-output">[INFO] Generated Organization Name: BlueWave Technologies_9900</span>
+                <span class="reporter-method-output">[INFO] Entering Organization Name...</span>
+                <span class="reporter-method-output">[INFO] Opening member selection window...</span>
+                <span class="reporter-method-output">[INFO] Switching to member selection window...</span>
+                <span class="reporter-method-output">[INFO] Searching for organization/member: Vtiger813</span>
+                <span class="reporter-method-output">[INFO] Selecting organization/member...</span>
+                <span class="reporter-method-output">[INFO] Accepting alert...</span>
+                <span class="reporter-method-output">[INFO] Switching back to Organization window...</span>
+                <span class="reporter-method-output">[INFO] Saving Organization...</span>
+                <span class="reporter-method-output">[INFO] Organization save operation completed.</span>
+                <span class="reporter-method-output">[INFO] Starting Organization creation verification...</span>
+                <span class="reporter-method-output">[INFO] Expected Organization Name: BlueWave Technologies_9900</span>
+                <span class="reporter-method-output">[INFO] Actual Organization Name: BlueWave Technologies_9900</span>
+                <span class="reporter-method-output">==============================================</span>
+                <span class="reporter-method-output">       CREATE ORGANIZATION TEST FINISHED      </span>
+                <span class="reporter-method-output">==============================================</span>
+              </div> <!-- reporter-method-output-div -->
+            </div> <!-- reporter-method-div -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
@@ -220,11 +250,27 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">learning_reports.SauceDemoTest</div> <!-- chronological-class-name -->
-              <div class="test-method">
-                <span class="method-name">login</span>
+              <div class="chronological-class-name">crm.vtiger.org.OrgTest</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">setUp</span>
                 <span class="method-start">0 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">login</span>
+                <span class="method-start">1553 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">createOrgTest</span>
+                <span class="method-start">5215 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">logout</span>
+                <span class="method-start">16324 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">32344 ms</span>
+              </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

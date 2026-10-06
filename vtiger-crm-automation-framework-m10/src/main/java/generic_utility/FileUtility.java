@@ -13,8 +13,10 @@ import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+import org.testng.annotations.Test;
 
 public class FileUtility {
+	
 	public static String getDataFromJsonFile(String key) throws IOException, ParseException {
 		FileReader fr = new FileReader("./src/test/resources/cd.json");
 		JSONParser parser = new JSONParser();
