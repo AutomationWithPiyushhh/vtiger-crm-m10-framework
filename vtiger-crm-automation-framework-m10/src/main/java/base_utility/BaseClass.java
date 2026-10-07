@@ -13,10 +13,17 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+
+import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.aventstack.extentreports.reporter.configuration.Theme;
 
 import generic_utility.FileUtility;
+import generic_utility.JavaUtility;
 import generic_utility.WebDriverUtility;
 import object_repository.HomePage;
 import object_repository.LoginPage;
@@ -25,6 +32,24 @@ public class BaseClass {
 
 	public WebDriver driver = null;
 	public WebDriverUtility wdUtil;
+	public ExtentSparkReporter spark;
+	public ExtentReports report;
+	
+	@BeforeSuite
+	public void repConfig() {
+//		configuration
+		String time = JavaUtility.getCurrentDateTime();
+		spark = new ExtentSparkReporter("./ad_reports/" + time + ".html");
+
+		spark.config().setDocumentTitle("sauce demo reports");
+		spark.config().setReportName("login reports");
+		spark.config().setTheme(Theme.DARK);
+
+		report = new ExtentReports();
+		report.attachReporter(spark);
+		report.setSystemInfo("browser", "edge");
+		report.setSystemInfo("window", "11");
+	}
 
 	@BeforeClass
 	public void setUp() throws IOException, ParseException {
@@ -95,5 +120,10 @@ public class BaseClass {
 		// Close browser
 		Reporter.log("[INFO] Closing browser...", true);
 		driver.quit();
+	}
+	
+	@AfterSuite
+	public void repBackup() {
+		report.flush();
 	}
 }

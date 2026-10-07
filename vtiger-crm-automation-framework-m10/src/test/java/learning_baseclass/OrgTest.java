@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 
 import base_utility.BaseClass;
 
-public class OrgTest extends BaseClass {
+public class OrgTest extends Practice_Base {
 	@Test
 	public void createOrgTest() {
 		Reporter.log("create Org", true);

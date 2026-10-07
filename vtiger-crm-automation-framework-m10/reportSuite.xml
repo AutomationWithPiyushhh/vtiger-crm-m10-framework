@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+
+<suite parallel="tests" name="Suite">
+	<test name="TestThread1">
+		<classes>
+			<class name="crm.vtiger.contact.ContactTest" />
+		</classes>
+	</test>
+
+	<test name="TestThread2">
+		<classes>
+			<class name="crm.vtiger.org.OrgTest" />
+		</classes>
+	</test>
+</suite>
+<!-- ThreadLocal => MultiThreading -->

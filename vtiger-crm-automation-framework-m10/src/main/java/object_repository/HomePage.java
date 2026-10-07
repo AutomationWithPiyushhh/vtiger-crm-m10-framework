@@ -20,19 +20,18 @@ public class HomePage {
 
 //	css = "img[src='themes/softed/images/user.PNG']"
 //	xpath = "//td[contains(@onmouseover, 'abc')]/img"
-	
+
 //	auto healing
-	@FindAll({
-				@FindBy(css = "img[src='themes/softed/pics/user.PNG']"),
-				@FindBy(xpath = "//td[contains(@onmouseover, 'abc')]/img")
-	})
+//	@FindAll({ @FindBy(css = "img[src='themes/softed/pics/user.PNG']"),
+//			@FindBy(xpath = "//td[contains(@onmouseover, 'abc')]/img") })
+//	private WebElement profileIcon;
+	
+	@FindBy(css = "[src='themes/softed/images/user.PNG']")
 	private WebElement profileIcon;
 
 	@FindBy(linkText = "Sign Out")
 	private WebElement signOutLink;
 
-
-	
 //	getters
 	public WebElement getOrgLink() {
 		return orgLink;

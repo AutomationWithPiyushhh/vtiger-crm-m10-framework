@@ -23,69 +23,6 @@
       <![CDATA[[INFO] Login process completed successfully.]]>
     </line>
     <line>
-      <![CDATA[==============================================]]>
-    </line>
-    <line>
-      <![CDATA[       CREATE ORGANIZATION TEST STARTED       ]]>
-    </line>
-    <line>
-      <![CDATA[==============================================]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Navigating to Organizations module...]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Opening Create Organization page...]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Generated Organization Name: BlueWave Technologies_9900]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Entering Organization Name...]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Opening member selection window...]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Switching to member selection window...]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Searching for organization/member: Vtiger813]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Selecting organization/member...]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Accepting alert...]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Switching back to Organization window...]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Saving Organization...]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Organization save operation completed.]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Starting Organization creation verification...]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Expected Organization Name: BlueWave Technologies_9900]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Actual Organization Name: BlueWave Technologies_9900]]>
-    </line>
-    <line>
-      <![CDATA[==============================================]]>
-    </line>
-    <line>
-      <![CDATA[       CREATE ORGANIZATION TEST FINISHED      ]]>
-    </line>
-    <line>
-      <![CDATA[==============================================]]>
-    </line>
-    <line>
       <![CDATA[[INFO] Starting logout process...]]>
     </line>
     <line>
@@ -101,12 +38,16 @@
       <![CDATA[[INFO] Closing browser...]]>
     </line>
   </reporter-output>
-  <suite started-at="2026-10-06T09:24:56 IST" name="Default suite" finished-at="2026-10-06T09:25:28 IST" duration-ms="32669">
+  <suite started-at="2026-10-07T09:29:56 IST" name="Default suite" finished-at="2026-10-07T09:30:08 IST" duration-ms="12370">
     <groups>
     </groups>
-    <test started-at="2026-10-06T09:24:56 IST" name="Default test" finished-at="2026-10-06T09:25:28 IST" duration-ms="32669">
-      <class name="crm.vtiger.org.OrgTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:crm.vtiger.org.OrgTest@710f4dc7]" started-at="2026-10-06T09:24:56 IST" name="setUp" finished-at="2026-10-06T09:24:57 IST" duration-ms="1543" status="PASS">
+    <test started-at="2026-10-07T09:29:56 IST" name="Default test" finished-at="2026-10-07T09:30:08 IST" duration-ms="12370">
+      <class name="crm.vtiger.contact.ContactTest">
+        <test-method is-config="true" signature="repConfig()[pri:0, instance:crm.vtiger.contact.ContactTest@544fa968]" started-at="2026-10-07T09:29:55 IST" name="repConfig" finished-at="2026-10-07T09:29:56 IST" duration-ms="271" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- repConfig -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:crm.vtiger.contact.ContactTest@544fa968]" started-at="2026-10-07T09:29:56 IST" name="setUp" finished-at="2026-10-07T09:29:57 IST" duration-ms="1521" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[[INFO] Launching chrome browser...]]>
@@ -119,7 +60,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:crm.vtiger.org.OrgTest@710f4dc7]" started-at="2026-10-06T09:24:57 IST" name="login" finished-at="2026-10-06T09:25:01 IST" duration-ms="3658" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:crm.vtiger.contact.ContactTest@544fa968]" started-at="2026-10-07T09:29:57 IST" name="login" finished-at="2026-10-07T09:30:01 IST" duration-ms="3768" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[[INFO] Navigating to Vtiger CRM application...]]>
@@ -135,74 +76,11 @@
             </line>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="createOrgTest()[pri:0, instance:crm.vtiger.org.OrgTest@710f4dc7]" started-at="2026-10-06T09:25:01 IST" name="createOrgTest" finished-at="2026-10-06T09:25:12 IST" duration-ms="11099" status="PASS">
+        <test-method signature="createContactTest()[pri:0, instance:crm.vtiger.contact.ContactTest@544fa968]" started-at="2026-10-07T09:30:01 IST" name="createContactTest" finished-at="2026-10-07T09:30:07 IST" duration-ms="5806" status="PASS">
           <reporter-output>
-            <line>
-              <![CDATA[==============================================]]>
-            </line>
-            <line>
-              <![CDATA[       CREATE ORGANIZATION TEST STARTED       ]]>
-            </line>
-            <line>
-              <![CDATA[==============================================]]>
-            </line>
-            <line>
-              <![CDATA[[INFO] Navigating to Organizations module...]]>
-            </line>
-            <line>
-              <![CDATA[[INFO] Opening Create Organization page...]]>
-            </line>
-            <line>
-              <![CDATA[[INFO] Generated Organization Name: BlueWave Technologies_9900]]>
-            </line>
-            <line>
-              <![CDATA[[INFO] Entering Organization Name...]]>
-            </line>
-            <line>
-              <![CDATA[[INFO] Opening member selection window...]]>
-            </line>
-            <line>
-              <![CDATA[[INFO] Switching to member selection window...]]>
-            </line>
-            <line>
-              <![CDATA[[INFO] Searching for organization/member: Vtiger813]]>
-            </line>
-            <line>
-              <![CDATA[[INFO] Selecting organization/member...]]>
-            </line>
-            <line>
-              <![CDATA[[INFO] Accepting alert...]]>
-            </line>
-            <line>
-              <![CDATA[[INFO] Switching back to Organization window...]]>
-            </line>
-            <line>
-              <![CDATA[[INFO] Saving Organization...]]>
-            </line>
-            <line>
-              <![CDATA[[INFO] Organization save operation completed.]]>
-            </line>
-            <line>
-              <![CDATA[[INFO] Starting Organization creation verification...]]>
-            </line>
-            <line>
-              <![CDATA[[INFO] Expected Organization Name: BlueWave Technologies_9900]]>
-            </line>
-            <line>
-              <![CDATA[[INFO] Actual Organization Name: BlueWave Technologies_9900]]>
-            </line>
-            <line>
-              <![CDATA[==============================================]]>
-            </line>
-            <line>
-              <![CDATA[       CREATE ORGANIZATION TEST FINISHED      ]]>
-            </line>
-            <line>
-              <![CDATA[==============================================]]>
-            </line>
           </reporter-output>
-        </test-method> <!-- createOrgTest -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:crm.vtiger.org.OrgTest@710f4dc7]" started-at="2026-10-06T09:25:12 IST" name="logout" finished-at="2026-10-06T09:25:28 IST" duration-ms="16018" status="PASS">
+        </test-method> <!-- createContactTest -->
+        <test-method is-config="true" signature="logout()[pri:0, instance:crm.vtiger.contact.ContactTest@544fa968]" started-at="2026-10-07T09:30:07 IST" name="logout" finished-at="2026-10-07T09:30:08 IST" duration-ms="932" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[[INFO] Starting logout process...]]>
@@ -218,14 +96,18 @@
             </line>
           </reporter-output>
         </test-method> <!-- logout -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:crm.vtiger.org.OrgTest@710f4dc7]" started-at="2026-10-06T09:25:28 IST" name="tearDown" finished-at="2026-10-06T09:25:28 IST" duration-ms="298" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:crm.vtiger.contact.ContactTest@544fa968]" started-at="2026-10-07T09:30:08 IST" name="tearDown" finished-at="2026-10-07T09:30:08 IST" duration-ms="293" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[[INFO] Closing browser...]]>
             </line>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- crm.vtiger.org.OrgTest -->
+        <test-method is-config="true" signature="repBackup()[pri:0, instance:crm.vtiger.contact.ContactTest@544fa968]" started-at="2026-10-07T09:30:08 IST" name="repBackup" finished-at="2026-10-07T09:30:09 IST" duration-ms="379" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- repBackup -->
+      </class> <!-- crm.vtiger.contact.ContactTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
