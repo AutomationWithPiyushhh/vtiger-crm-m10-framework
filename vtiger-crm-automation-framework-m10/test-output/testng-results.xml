@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
+    <line>
+      <![CDATA[[INFO] Launching chrome browser...]]>
+    </line>
     <line>
       <![CDATA[[INFO] Launching chrome browser...]]>
     </line>
@@ -8,7 +11,16 @@
       <![CDATA[[INFO] Maximizing browser window...]]>
     </line>
     <line>
+      <![CDATA[[INFO] Maximizing browser window...]]>
+    </line>
+    <line>
       <![CDATA[[INFO] Configuring implicit wait: 15 seconds...]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Configuring implicit wait: 15 seconds...]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Navigating to Vtiger CRM application...]]>
     </line>
     <line>
       <![CDATA[[INFO] Navigating to Vtiger CRM application...]]>
@@ -18,6 +30,15 @@
     </line>
     <line>
       <![CDATA[[INFO] Starting login process...]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Application launched successfully.]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Starting login process...]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Login process completed successfully.]]>
     </line>
     <line>
       <![CDATA[[INFO] Login process completed successfully.]]>
@@ -37,17 +58,28 @@
     <line>
       <![CDATA[[INFO] Closing browser...]]>
     </line>
+    <line>
+      <![CDATA[[INFO] Starting logout process...]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Hovering over profile icon...]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Clicking Sign Out...]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Logout completed successfully.]]>
+    </line>
+    <line>
+      <![CDATA[[INFO] Closing browser...]]>
+    </line>
   </reporter-output>
-  <suite started-at="2026-10-07T09:29:56 IST" name="Default suite" finished-at="2026-10-07T09:30:08 IST" duration-ms="12370">
+  <suite started-at="2026-10-07T10:23:45 IST" name="Suite" finished-at="2026-10-07T10:23:59 IST" duration-ms="13500">
     <groups>
     </groups>
-    <test started-at="2026-10-07T09:29:56 IST" name="Default test" finished-at="2026-10-07T09:30:08 IST" duration-ms="12370">
+    <test started-at="2026-10-07T10:23:45 IST" name="TestThread1" finished-at="2026-10-07T10:23:56 IST" duration-ms="11081">
       <class name="crm.vtiger.contact.ContactTest">
-        <test-method is-config="true" signature="repConfig()[pri:0, instance:crm.vtiger.contact.ContactTest@544fa968]" started-at="2026-10-07T09:29:55 IST" name="repConfig" finished-at="2026-10-07T09:29:56 IST" duration-ms="271" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- repConfig -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:crm.vtiger.contact.ContactTest@544fa968]" started-at="2026-10-07T09:29:56 IST" name="setUp" finished-at="2026-10-07T09:29:57 IST" duration-ms="1521" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:crm.vtiger.contact.ContactTest@fa4c865]" started-at="2026-10-07T10:23:45 IST" name="setUp" finished-at="2026-10-07T10:23:47 IST" duration-ms="1954" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[[INFO] Launching chrome browser...]]>
@@ -60,7 +92,7 @@
             </line>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:crm.vtiger.contact.ContactTest@544fa968]" started-at="2026-10-07T09:29:57 IST" name="login" finished-at="2026-10-07T09:30:01 IST" duration-ms="3768" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:crm.vtiger.contact.ContactTest@fa4c865]" started-at="2026-10-07T10:23:47 IST" name="login" finished-at="2026-10-07T10:23:52 IST" duration-ms="4328" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[[INFO] Navigating to Vtiger CRM application...]]>
@@ -76,11 +108,11 @@
             </line>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="createContactTest()[pri:0, instance:crm.vtiger.contact.ContactTest@544fa968]" started-at="2026-10-07T09:30:01 IST" name="createContactTest" finished-at="2026-10-07T09:30:07 IST" duration-ms="5806" status="PASS">
+        <test-method signature="createContactTest()[pri:0, instance:crm.vtiger.contact.ContactTest@fa4c865]" started-at="2026-10-07T10:23:52 IST" name="createContactTest" finished-at="2026-10-07T10:23:55 IST" duration-ms="3730" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createContactTest -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:crm.vtiger.contact.ContactTest@544fa968]" started-at="2026-10-07T09:30:07 IST" name="logout" finished-at="2026-10-07T09:30:08 IST" duration-ms="932" status="PASS">
+        <test-method is-config="true" signature="logout()[pri:0, instance:crm.vtiger.contact.ContactTest@fa4c865]" started-at="2026-10-07T10:23:55 IST" name="logout" finished-at="2026-10-07T10:23:56 IST" duration-ms="779" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[[INFO] Starting logout process...]]>
@@ -96,18 +128,82 @@
             </line>
           </reporter-output>
         </test-method> <!-- logout -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:crm.vtiger.contact.ContactTest@544fa968]" started-at="2026-10-07T09:30:08 IST" name="tearDown" finished-at="2026-10-07T09:30:08 IST" duration-ms="293" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:crm.vtiger.contact.ContactTest@fa4c865]" started-at="2026-10-07T10:23:56 IST" name="tearDown" finished-at="2026-10-07T10:23:56 IST" duration-ms="238" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[[INFO] Closing browser...]]>
             </line>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="repBackup()[pri:0, instance:crm.vtiger.contact.ContactTest@544fa968]" started-at="2026-10-07T09:30:08 IST" name="repBackup" finished-at="2026-10-07T09:30:09 IST" duration-ms="379" status="PASS">
+      </class> <!-- crm.vtiger.contact.ContactTest -->
+    </test> <!-- TestThread1 -->
+    <test started-at="2026-10-07T10:23:45 IST" name="TestThread2" finished-at="2026-10-07T10:23:59 IST" duration-ms="13500">
+      <class name="crm.vtiger.org.OrgTest">
+        <test-method is-config="true" signature="repConfig()[pri:0, instance:crm.vtiger.org.OrgTest@2e377400]" started-at="2026-10-07T10:23:45 IST" name="repConfig" finished-at="2026-10-07T10:23:45 IST" duration-ms="233" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- repConfig -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:crm.vtiger.org.OrgTest@2e377400]" started-at="2026-10-07T10:23:45 IST" name="setUp" finished-at="2026-10-07T10:23:47 IST" duration-ms="1975" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[[INFO] Launching chrome browser...]]>
+            </line>
+            <line>
+              <![CDATA[[INFO] Maximizing browser window...]]>
+            </line>
+            <line>
+              <![CDATA[[INFO] Configuring implicit wait: 15 seconds...]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="login()[pri:0, instance:crm.vtiger.org.OrgTest@2e377400]" started-at="2026-10-07T10:23:47 IST" name="login" finished-at="2026-10-07T10:23:51 IST" duration-ms="4038" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[[INFO] Navigating to Vtiger CRM application...]]>
+            </line>
+            <line>
+              <![CDATA[[INFO] Application launched successfully.]]>
+            </line>
+            <line>
+              <![CDATA[[INFO] Starting login process...]]>
+            </line>
+            <line>
+              <![CDATA[[INFO] Login process completed successfully.]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="createOrgTest()[pri:0, instance:crm.vtiger.org.OrgTest@2e377400]" started-at="2026-10-07T10:23:51 IST" name="createOrgTest" finished-at="2026-10-07T10:23:58 IST" duration-ms="6505" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createOrgTest -->
+        <test-method is-config="true" signature="logout()[pri:0, instance:crm.vtiger.org.OrgTest@2e377400]" started-at="2026-10-07T10:23:58 IST" name="logout" finished-at="2026-10-07T10:23:59 IST" duration-ms="766" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[[INFO] Starting logout process...]]>
+            </line>
+            <line>
+              <![CDATA[[INFO] Hovering over profile icon...]]>
+            </line>
+            <line>
+              <![CDATA[[INFO] Clicking Sign Out...]]>
+            </line>
+            <line>
+              <![CDATA[[INFO] Logout completed successfully.]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:crm.vtiger.org.OrgTest@2e377400]" started-at="2026-10-07T10:23:59 IST" name="tearDown" finished-at="2026-10-07T10:23:59 IST" duration-ms="186" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[[INFO] Closing browser...]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="repBackup()[pri:0, instance:crm.vtiger.org.OrgTest@2e377400]" started-at="2026-10-07T10:23:59 IST" name="repBackup" finished-at="2026-10-07T10:23:59 IST" duration-ms="263" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- repBackup -->
-      </class> <!-- crm.vtiger.contact.ContactTest -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+      </class> <!-- crm.vtiger.org.OrgTest -->
+    </test> <!-- TestThread2 -->
+  </suite> <!-- Suite -->
 </testng-results>

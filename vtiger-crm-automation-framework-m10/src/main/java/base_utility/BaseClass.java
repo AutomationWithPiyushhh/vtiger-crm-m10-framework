@@ -32,8 +32,8 @@ public class BaseClass {
 
 	public WebDriver driver = null;
 	public WebDriverUtility wdUtil;
-	public ExtentSparkReporter spark;
-	public ExtentReports report;
+	public static ExtentSparkReporter spark;
+	public static ExtentReports report;
 	
 	@BeforeSuite
 	public void repConfig() {
