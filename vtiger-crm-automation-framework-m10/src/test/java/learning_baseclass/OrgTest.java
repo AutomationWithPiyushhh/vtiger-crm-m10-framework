@@ -1,14 +1,24 @@
 package learning_baseclass;
 
-import org.testng.Reporter;
+import org.testng.Assert;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import base_utility.BaseClass;
-
+@Listeners(learning_baseclass.Listeners_Implementation.class)
 public class OrgTest extends Practice_Base {
 	@Test
 	public void createOrgTest() {
-		Reporter.log("create Org", true);
-		Reporter.log("verify Org", true);
+		System.out.println("create Org");
+	}
+	
+	@Test
+	public void modifyOrgTest() {
+		System.out.println("modify Org");
+		Assert.assertTrue(false);
+	}
+	
+	@Test(dependsOnMethods = "modifyOrgTest")
+	public void deleteOrgTest() {
+		System.out.println("delete Org");
 	}
 }

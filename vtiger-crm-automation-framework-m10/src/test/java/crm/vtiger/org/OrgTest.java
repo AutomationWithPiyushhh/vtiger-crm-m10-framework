@@ -6,6 +6,7 @@ import org.json.simple.parser.ParseException;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.ExtentTest;
@@ -14,17 +15,22 @@ import com.aventstack.extentreports.Status;
 import base_utility.BaseClass;
 import generic_utility.FileUtility;
 import generic_utility.JavaUtility;
-import junit.framework.Assert;
 import object_repository.HomePage;
 
 public class OrgTest extends BaseClass {
+	
+//	@Test
+//	public void createLeadTest() {
+//		System.out.println("creating leads for organization");
+//		Assert.assertTrue(false);
+//	}
+	
 
 	@Test
 	public void createOrgTest() throws IOException, ParseException, InterruptedException {
-
 //		report gen for particular test method
 		ExtentTest test = report.createTest("createOrgTest");
-		
+				
 		long random = JavaUtility.generateRandomNumber();
 		String orgName = FileUtility.getDataFromExcelFile("org", 3, 0) + random;
 		HomePage hp = new HomePage(driver);
@@ -47,8 +53,8 @@ public class OrgTest extends BaseClass {
 		driver.findElement(By.cssSelector("input[title='Save [Alt+S]']")).click();
 
 		String actOrgName = driver.findElement(By.id("dtlview_Organization Name")).getText();
-		Assert.assertEquals(orgName, actOrgName);
+		Assert.assertEquals(orgName, actOrgName+"abc");
 
-		test.log(Status.PASS, "Test script got passed...");
+		test.log(Status.FAIL, "Test script got failed...");
 	}
 }

@@ -3,15 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="crm.vtiger.org.OrgTest">
+      <class name="learning_baseclass.OrgTest">
         <methods>
+          <include name="login"/>
+          <include name="modifyOrgTest"/>
+          <include name="tearDown"/>
+          <include name="deleteOrgTest"/>
           <include name="logout"/>
           <include name="setUp"/>
-          <include name="createOrgTest"/>
-          <include name="login"/>
-          <include name="tearDown"/>
         </methods>
-      </class> <!-- crm.vtiger.org.OrgTest -->
+      </class> <!-- learning_baseclass.OrgTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

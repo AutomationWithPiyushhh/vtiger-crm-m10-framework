@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite parallel="tests" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <test thread-count="5" parallel="tests" name="TestThread1(failed)">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="crm.vtiger.contact.ContactTest">
+      <class name="learning_baseclass.OrgTest">
         <methods>
-          <include name="logout"/>
-          <include name="createContactTest"/>
-          <include name="setUp"/>
-          <include name="repBackup"/>
-          <include name="tearDown"/>
           <include name="login"/>
-          <include name="repConfig"/>
+          <include name="modifyOrgTest"/>
+          <include name="tearDown"/>
+          <include name="deleteOrgTest"/>
+          <include name="logout"/>
+          <include name="setUp"/>
         </methods>
-      </class> <!-- crm.vtiger.contact.ContactTest -->
+      </class> <!-- learning_baseclass.OrgTest -->
     </classes>
-  </test> <!-- TestThread1(failed) -->
-</suite> <!-- Failed suite [Suite] -->
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->

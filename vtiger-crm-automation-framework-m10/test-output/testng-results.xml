@@ -1,209 +1,119 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="1" failed="1" skipped="1">
   <reporter-output>
-    <line>
-      <![CDATA[[INFO] Launching chrome browser...]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Launching chrome browser...]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Maximizing browser window...]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Maximizing browser window...]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Configuring implicit wait: 15 seconds...]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Configuring implicit wait: 15 seconds...]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Navigating to Vtiger CRM application...]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Navigating to Vtiger CRM application...]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Application launched successfully.]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Starting login process...]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Application launched successfully.]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Starting login process...]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Login process completed successfully.]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Login process completed successfully.]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Starting logout process...]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Hovering over profile icon...]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Clicking Sign Out...]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Logout completed successfully.]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Closing browser...]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Starting logout process...]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Hovering over profile icon...]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Clicking Sign Out...]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Logout completed successfully.]]>
-    </line>
-    <line>
-      <![CDATA[[INFO] Closing browser...]]>
-    </line>
   </reporter-output>
-  <suite started-at="2026-10-07T10:23:45 IST" name="Suite" finished-at="2026-10-07T10:23:59 IST" duration-ms="13500">
+  <suite started-at="2026-10-08T09:24:59 IST" name="Default suite" finished-at="2026-10-08T09:24:59 IST" duration-ms="99">
     <groups>
     </groups>
-    <test started-at="2026-10-07T10:23:45 IST" name="TestThread1" finished-at="2026-10-07T10:23:56 IST" duration-ms="11081">
-      <class name="crm.vtiger.contact.ContactTest">
-        <test-method is-config="true" signature="setUp()[pri:0, instance:crm.vtiger.contact.ContactTest@fa4c865]" started-at="2026-10-07T10:23:45 IST" name="setUp" finished-at="2026-10-07T10:23:47 IST" duration-ms="1954" status="PASS">
+    <test started-at="2026-10-08T09:24:59 IST" name="Default test" finished-at="2026-10-08T09:24:59 IST" duration-ms="99">
+      <class name="learning_baseclass.OrgTest">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:learning_baseclass.OrgTest@752325ad]" started-at="2026-10-08T09:24:59 IST" name="setUp" finished-at="2026-10-08T09:24:59 IST" duration-ms="11" status="PASS">
           <reporter-output>
-            <line>
-              <![CDATA[[INFO] Launching chrome browser...]]>
-            </line>
-            <line>
-              <![CDATA[[INFO] Maximizing browser window...]]>
-            </line>
-            <line>
-              <![CDATA[[INFO] Configuring implicit wait: 15 seconds...]]>
-            </line>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:crm.vtiger.contact.ContactTest@fa4c865]" started-at="2026-10-07T10:23:47 IST" name="login" finished-at="2026-10-07T10:23:52 IST" duration-ms="4328" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:learning_baseclass.OrgTest@752325ad]" started-at="2026-10-08T09:24:59 IST" name="login" finished-at="2026-10-08T09:24:59 IST" duration-ms="1" status="PASS">
           <reporter-output>
-            <line>
-              <![CDATA[[INFO] Navigating to Vtiger CRM application...]]>
-            </line>
-            <line>
-              <![CDATA[[INFO] Application launched successfully.]]>
-            </line>
-            <line>
-              <![CDATA[[INFO] Starting login process...]]>
-            </line>
-            <line>
-              <![CDATA[[INFO] Login process completed successfully.]]>
-            </line>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="createContactTest()[pri:0, instance:crm.vtiger.contact.ContactTest@fa4c865]" started-at="2026-10-07T10:23:52 IST" name="createContactTest" finished-at="2026-10-07T10:23:55 IST" duration-ms="3730" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createContactTest -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:crm.vtiger.contact.ContactTest@fa4c865]" started-at="2026-10-07T10:23:55 IST" name="logout" finished-at="2026-10-07T10:23:56 IST" duration-ms="779" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[[INFO] Starting logout process...]]>
-            </line>
-            <line>
-              <![CDATA[[INFO] Hovering over profile icon...]]>
-            </line>
-            <line>
-              <![CDATA[[INFO] Clicking Sign Out...]]>
-            </line>
-            <line>
-              <![CDATA[[INFO] Logout completed successfully.]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- logout -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:crm.vtiger.contact.ContactTest@fa4c865]" started-at="2026-10-07T10:23:56 IST" name="tearDown" finished-at="2026-10-07T10:23:56 IST" duration-ms="238" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[[INFO] Closing browser...]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- crm.vtiger.contact.ContactTest -->
-    </test> <!-- TestThread1 -->
-    <test started-at="2026-10-07T10:23:45 IST" name="TestThread2" finished-at="2026-10-07T10:23:59 IST" duration-ms="13500">
-      <class name="crm.vtiger.org.OrgTest">
-        <test-method is-config="true" signature="repConfig()[pri:0, instance:crm.vtiger.org.OrgTest@2e377400]" started-at="2026-10-07T10:23:45 IST" name="repConfig" finished-at="2026-10-07T10:23:45 IST" duration-ms="233" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- repConfig -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:crm.vtiger.org.OrgTest@2e377400]" started-at="2026-10-07T10:23:45 IST" name="setUp" finished-at="2026-10-07T10:23:47 IST" duration-ms="1975" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[[INFO] Launching chrome browser...]]>
-            </line>
-            <line>
-              <![CDATA[[INFO] Maximizing browser window...]]>
-            </line>
-            <line>
-              <![CDATA[[INFO] Configuring implicit wait: 15 seconds...]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method is-config="true" signature="login()[pri:0, instance:crm.vtiger.org.OrgTest@2e377400]" started-at="2026-10-07T10:23:47 IST" name="login" finished-at="2026-10-07T10:23:51 IST" duration-ms="4038" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[[INFO] Navigating to Vtiger CRM application...]]>
-            </line>
-            <line>
-              <![CDATA[[INFO] Application launched successfully.]]>
-            </line>
-            <line>
-              <![CDATA[[INFO] Starting login process...]]>
-            </line>
-            <line>
-              <![CDATA[[INFO] Login process completed successfully.]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- login -->
-        <test-method signature="createOrgTest()[pri:0, instance:crm.vtiger.org.OrgTest@2e377400]" started-at="2026-10-07T10:23:51 IST" name="createOrgTest" finished-at="2026-10-07T10:23:58 IST" duration-ms="6505" status="PASS">
+        <test-method signature="createOrgTest()[pri:0, instance:learning_baseclass.OrgTest@752325ad]" started-at="2026-10-08T09:24:59 IST" name="createOrgTest" finished-at="2026-10-08T09:24:59 IST" duration-ms="9" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createOrgTest -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:crm.vtiger.org.OrgTest@2e377400]" started-at="2026-10-07T10:23:58 IST" name="logout" finished-at="2026-10-07T10:23:59 IST" duration-ms="766" status="PASS">
+        <test-method is-config="true" signature="logout()[pri:0, instance:learning_baseclass.OrgTest@752325ad]" started-at="2026-10-08T09:24:59 IST" name="logout" finished-at="2026-10-08T09:24:59 IST" duration-ms="1" status="PASS">
           <reporter-output>
-            <line>
-              <![CDATA[[INFO] Starting logout process...]]>
-            </line>
-            <line>
-              <![CDATA[[INFO] Hovering over profile icon...]]>
-            </line>
-            <line>
-              <![CDATA[[INFO] Clicking Sign Out...]]>
-            </line>
-            <line>
-              <![CDATA[[INFO] Logout completed successfully.]]>
-            </line>
           </reporter-output>
         </test-method> <!-- logout -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:crm.vtiger.org.OrgTest@2e377400]" started-at="2026-10-07T10:23:59 IST" name="tearDown" finished-at="2026-10-07T10:23:59 IST" duration-ms="186" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:learning_baseclass.OrgTest@752325ad]" started-at="2026-10-08T09:24:59 IST" name="login" finished-at="2026-10-08T09:24:59 IST" duration-ms="0" status="PASS">
           <reporter-output>
-            <line>
-              <![CDATA[[INFO] Closing browser...]]>
-            </line>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="modifyOrgTest()[pri:0, instance:learning_baseclass.OrgTest@752325ad]" started-at="2026-10-08T09:24:59 IST" name="modifyOrgTest" finished-at="2026-10-08T09:24:59 IST" duration-ms="14" status="FAIL">
+          <exception class="java.lang.AssertionError">
+            <message>
+              <![CDATA[expected [true] but found [false]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.AssertionError: expected [true] but found [false]
+at org.testng.Assert.fail(Assert.java:111)
+at org.testng.Assert.failNotEquals(Assert.java:1590)
+at org.testng.Assert.assertTrue(Assert.java:57)
+at org.testng.Assert.assertTrue(Assert.java:67)
+at learning_baseclass.OrgTest.modifyOrgTest(OrgTest.java:16)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:697)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:1005)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:744)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.AssertionError -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- modifyOrgTest -->
+        <test-method is-config="true" signature="logout()[pri:0, instance:learning_baseclass.OrgTest@752325ad]" started-at="2026-10-08T09:24:59 IST" name="logout" finished-at="2026-10-08T09:24:59 IST" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method signature="deleteOrgTest()[pri:0, instance:learning_baseclass.OrgTest@752325ad]" started-at="2026-10-08T09:24:59 IST" name="deleteOrgTest" finished-at="2026-10-08T09:24:59 IST" depends-on-methods="learning_baseclass.OrgTest.modifyOrgTest" duration-ms="0" status="SKIP">
+          <exception class="java.lang.Throwable">
+            <message>
+              <![CDATA[Method learning_baseclass.OrgTest.deleteOrgTest() on instance learning_baseclass.OrgTest@752325ad depends on not successfully finished methods 
+[learning_baseclass.OrgTest.modifyOrgTest() on instance learning_baseclass.OrgTest@752325ad]]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.Throwable: Method learning_baseclass.OrgTest.deleteOrgTest() on instance learning_baseclass.OrgTest@752325ad depends on not successfully finished methods 
+[learning_baseclass.OrgTest.modifyOrgTest() on instance learning_baseclass.OrgTest@752325ad]
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:159)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
+at org.testng.TestRunner.privateRun(TestRunner.java:744)
+at org.testng.TestRunner.run(TestRunner.java:616)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
+at org.testng.SuiteRunner.run(SuiteRunner.java:312)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
+at org.testng.TestNG.runSuites(TestNG.java:1112)
+at org.testng.TestNG.run(TestNG.java:1079)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.Throwable -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteOrgTest -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:learning_baseclass.OrgTest@752325ad]" started-at="2026-10-08T09:24:59 IST" name="tearDown" finished-at="2026-10-08T09:24:59 IST" duration-ms="1" status="PASS">
+          <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="repBackup()[pri:0, instance:crm.vtiger.org.OrgTest@2e377400]" started-at="2026-10-07T10:23:59 IST" name="repBackup" finished-at="2026-10-07T10:23:59 IST" duration-ms="263" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- repBackup -->
-      </class> <!-- crm.vtiger.org.OrgTest -->
-    </test> <!-- TestThread2 -->
-  </suite> <!-- Suite -->
+      </class> <!-- learning_baseclass.OrgTest -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>
